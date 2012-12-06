@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+  <TITLE>Sagasu</TITLE>
+  <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</HEAD>
+<BODY>
+
+<H1>Sagasu</H1>
+
+
+<P>
+<STRONG>Sagasu</STRONG>
+is a GNOME tool to find strings in a set of files.
+The user specifies the search directory and the set of files
+to be searched.  Double-clicking on a search result launches a
+user command that can for example load the file in an editor
+at the appropriate line.  The search can optionally ignore
+CVS directories.
+</P>
+
+<P>
+Two optional command-line <STRONG>arguments</STRONG> can be given:
+the first is the initial <STRONG>search string</STRONG>
+and the second is the <STRONG>directory</STRONG>
+whose files will be searched.
+If only one argument is given, it is taken as the search string.
+No search is actually started, but the appropriate fields are initialized.
+Any subsequent arguments are ignored.
+</P>
+
+<P>
+Example: <CODE>sagasu printf /usr/include</CODE>
+</P>
+
+
+<H2>The Dialog</H2>
+
+<H3>Fields</H3>
+
+<P>
+The <STRONG>Search string</STRONG> field is where you type the
+string to be searched.  This string can be a Perl regular expression.
+You can start the search by clicking the <STRONG>Search</STRONG>
+button or by pressing the <STRONG>Enter</STRONG> key in any text field.
+</P>
+
+<P>
+The <STRONG>File patterns</STRONG> field is where you specify
+a blank-separated list of patterns that define the set of
+files to be searched.
+The <STRONG>Defaults</STRONG> button at the right of this field
+sets it to its default value, which is
+<STRONG>*.c *.cc *.C *.cpp *.cxx *.h</STRONG>.
+To search all makefiles in a project, you could specify a
+pattern like <STRONG>Makefile*</STRONG> so as to include
+all <STRONG>Makefile.in</STRONG> and <STRONG>Makefile.am</STRONG> files.
+</P>
+
+<P>
+The <STRONG>Search directory</STRONG> field is the directory
+whose files will be searched.  The <STRONG>Browse...</STRONG>
+button shows a file selection dialog.  You can also type the
+directory name manually.
+The <STRONG>~user</STRONG> notation is supported.
+A <STRONG>~</STRONG> alone refers to the current user's
+home directory.
+</P>
+
+<P>
+In the <STRONG>Editor command</STRONG> field, the term <STRONG>%f</STRONG>
+can be used to represent the filename found in the double-clicked line.
+The term <STRONG>%n</STRONG> can be used to represent the line number.
+For example, to start the <STRONG>vi</STRONG> editor in a GNOME terminal,
+use this editor command:
+</P>
+
+<PRE>
+<STRONG>gnome-terminal -e "vi +%n '%f'"</STRONG>
+</PRE>
+
+<P>
+This happens to be the default command.
+The <STRONG>Default</STRONG> button at the right of the field
+sets it back to the default command.
+</P>
+
+
+<H3>Search options</H3>
+
+<P>
+There are check boxes that allow you to determine:
+</P>
+<UL>
+<LI> if the search will match whole words (equivalent to the grep command's
+    <STRONG>-w</STRONG> option, or to the <STRONG>\b</STRONG> regular
+    expression operator in Perl); </LI>
+<LI> if the search will be case-sensitive; </LI>
+<LI> if the search expression will be taken to be a Perl regular expression
+    or a literal string to be found as is; </LI>
+<LI> if directories named 'CVS' will be ignored during a recursion; </LI>
+<LI> if directories that are reached through a symbolic link will be ignored
+    during a recursion. </LI>
+</UL>
+<P>
+There is also a numeric field where you can specify the depth
+of subdirectories into which the search is allowed to recurse.
+If you specify zero, only files in the search directory will
+be searched, and not the files that are in subdirectories.
+</P>
+
+
+<H2>Result Tabs</H2>
+
+<P>
+The application opens with a single, empty result tab.
+The text buffer under a tab is where the search results are displayed.
+You can create new result tabs by using the <STRONG>New Tab</STRONG>
+command in the File menu.
+You can also do that with the <STRONG>Ctl+N</STRONG> key sequence.
+</P>
+
+<P>
+Each tab has a number and an 'x' icon.
+This icon can be clicked to close the tab.
+You cannot close a tab if it is the only one.
+</P>
+
+<P>
+During and after a search, the number of matching lines and the
+number of matching files are displayed below the text buffer.
+</P>
+
+<P>
+You can <STRONG>double-click</STRONG> on a line in a result tab
+to <STRONG>execute the "editor command."</STRONG>
+The default editor command starts the <STRONG>vi</STRONG>
+text editor in a GNOME terminal.
+vi accepts an optional argument of the form +<EM>N</EM>
+where <EM>N</EM> is a line number at which to position the
+cursor initially.
+</P>
+
+<P>
+At the bottom of the Sagasu window is a text field where you
+can <STRONG>enter text to be searched inside the currently selected
+result tab</STRONG>.  Click the "Find in results" button to start the
+search.  At the right of this button, Sagasu will show
+either at what percentage of the result text the string was found,
+or that the string was not found.
+This search is always case-insensitive.
+</P>
+
+
+<H2>Saved Configuration</H2>
+
+<P>
+The search parameters and the main window's size
+are saved in a GNOME configuration file
+(~/.gnome/sagasu)
+when the Search button is clicked and when the application exits.
+Those parameters comprise the text fields and the check buttons,
+but not the set of open result tabs.
+</P>
+
+
+<H2>Interrupting the Search</H2>
+
+<P>
+When a search has started, the <STRONG>Search</STRONG> button
+becomes a <STRONG>Stop</STRONG> button.
+You can click this button to interrupt the search.
+</P>
+
+
+<H2>Command-Line Options</H2>
+
+<DL>
+<DT> --help </DT>
+    <DD> display a help page and exit </DD>
+<DT> --version </DT>
+    <DD> display version information and exit </DD>
+</DL>
+
+
+<H2>License</H2>
+
+<P>
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License.  This program has absolutely no warranty.
+</P>
+
+
+<H2>Author</H2>
+
+<UL>
+<LI> Pierre Sarrazin </LI>
+</UL>
+
+<P>
+See the <A HREF="http://sarrazip.com/dev/sagasu.html">Sagasu Home Page</A>.
+</P>
+
+
+<H2>Bugs</H2>
+
+<UL>
+<LI> If the file patterns designate some binary files, these will
+    not be ignored as they probably should be. </LI>
+</UL>
+
+
+<H2>History</H2>
+
+<P>
+Sagasu is a Japanese word that means "to search."
+Because of a lack of talent,
+I have a lot of trouble finding program names that are not already taken,
+especially if they are based on English, French or Latin.
+Exploring Japanese words proved to be a fruitful alternative.
+</P>
+
+
+</BODY>
+</HTML>

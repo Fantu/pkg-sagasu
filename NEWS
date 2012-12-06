@@ -1,0 +1,143 @@
+2010-06-19: Version 2.0.10 released
+
+    Czech translation added.
+
+2010-05-30: Version 2.0.9 released
+
+    The About dialog now offers a button to display the license text.
+    The "View this Program's License" command has thus been removed
+    from the Help menu.
+    Compilation now requires GTK+ >= 2.6.
+    Fixed Perl check in configure.ac.
+    Several compilation warnings fixed.
+
+2006-01-20: Version 2.0.8 released
+
+    Makefile adjusted to allow compilation under GNOME 2.12.
+    Minimum libgnomeui version now 2.8.0.
+
+2005-08-08: Version 2.0.7 released
+
+    German translation added.
+    Fixed bug where during a search, the "matching lines" label was
+    updated in the current tab instead of the tab where the search
+    started.
+
+2004-06-11: Version 2.0.6 released
+
+    A result page now starts with a line that shows the search string used.
+    The files in a directory are now searched in the alphabetical order
+    of their name.
+    A directory's regular files are searched before its subdirectories are.
+    The Serbian translation was updated.
+    The GNU GPL is now mentioned in the About dialog.
+
+2003-10-24: Version 2.0.5 released
+
+    New directory recursion depth field.
+    New toolbar button to erase the search string field.
+    Crash avoided when closing the application while a search is active.
+    Crash avoided when closing the tab in which an active search is running.
+    Russian translation updated.
+
+2003-10-20: Version 2.0.4 released
+
+    Fix for a g++ 3.3 compilation problem (assert.h in ResultPage.cpp).
+    RPM .spec file now more compliant with the Fedora project's guidelines.
+    RPM now puts manual pages in /usr/share/man instead of /usr/man.
+
+2003-07-30: Version 2.0.3 released
+
+    Russian translation added by Alexandre Prokoudine.
+
+2003-05-31: Version 2.0.2 released
+
+    Serbian translation added by Aleksandar Urosevic.
+    When a new tab is created, it becomes the current one.
+
+2003-05-16: Version 2.0.1 released
+
+    Japanese translation added by Utumi Hirosi.
+    configure.ac fixed re: AC_SUBST() problem related to PKG_CHECK_MODULES.
+    src/Makefile.am does not use -Wall directly anymore, to avoid
+    supposing g++; now using AC_COMPILE_WARNINGS macro.
+
+2003-04-02: Version 2.0.0 released
+
+    After search in a result page, the text of the 'find in results'
+    entry is selected.
+    Crash avoided when the search entry contains a UTF-8 string that
+    cannot be converted to Latin-1.
+    New Tabs menu that offers several new commands.
+    New tab-related buttons on the toolbar.
+    Mnemonics on tab labels numbered 1 through 9.
+    When closing next-to-last tab, the remaining one is renumbered 1.
+    Cleanup of some callbacks.
+
+2003-03-31: Version 1.99.2 released
+
+    Text found in the result page is highlighted.
+    Command-line arguments accepted as in version 1.0.x.
+    Documentation reviewed.
+
+2003-03-30: Version 1.99.1 released
+
+    New commands in Help menu to go to the Sagasu Home Page,
+    view the license (GPL) and say the word "sagasu".
+    RPM creation problems fixed.
+
+2003-03-29: Version 1.99.0 released
+
+    Slightly incomplete port to GNOME 2 using the C API.
+    "Find in results" feature not fully re-implemented.
+    Documentation to be reviewed.
+
+2002-09-30: Version 1.0.6 released
+
+    "Find in results" added.
+    Child process reaper added, to avoid zombie processes.
+
+2002-08-15: Version 1.0.5 released
+
+    Entries are all selected initially and after a search so that one can
+    paste text in an entry and have the pasted text replace the previous
+    content.  Before, the paste operation would only insert the text in
+    the original text.  One had to erase the entry before doing the
+    copy-and-paste operation.
+
+    Also, the buttons other than the Search/Stop button are disabled
+    during a search.
+
+2002-07-28: Version 1.0.4 released
+
+    .cxx added to the default file extensions.
+    The Enter key only starts a search when pressed in a text field.
+
+2002-05-24: Version 1.0.3 released
+
+    New option --with-gnomemm-config for systems where gnomemmConf.sh
+    is not in /usr/lib.
+    Polish translation.
+
+2002-04-20: Version 1.0.2 released
+
+    New tabs start as the new current tab.
+    Bug fix: error messages were counted as matching lines.
+    Function keys control the check boxes.
+    Number of matching files displayed with number of matching lines.
+    Bug fix: search directory selection dialog starts with current
+    search directory if it exists.
+    Match words: parentheses around expression (see \b).
+
+2002-04-07: Version 1.0.1 released
+
+    Command line arguments used as initial values for search string
+    and search directory fields.
+    Number of matching lines shown below the results.
+    Smaller tabs.
+    Home Page command in Help menu.
+
+2002-03-29: Version 1.0 released
+
+    First public release.
+

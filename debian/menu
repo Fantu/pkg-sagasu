@@ -1,0 +1,2 @@
+?package(sagasu):needs="X11" section="Applications/Text" \
+  title="sagasu" command="/usr/bin/sagasu"

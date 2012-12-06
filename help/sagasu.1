@@ -1,0 +1,68 @@
+.\" $Id: sagasu.1,v 1.15 2010/05/31 00:11:49 sarrazip Exp $
+.\" sagasu - GNOME tool to find strings in a set of files
+.\" Copyright (C) 2002-2010 Pierre Sarrazin <http://sarrazip.com/>
+.\"
+.\" This program is free software; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License
+.\" as published by the Free Software Foundation; either version 2
+.\" of the License, or (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+.\" 02111-1307, USA.
+.\"
+.\"
+.TH sagasu "1" "June 19th, 2010" "" ""
+.SH NAME
+sagasu \- GNOME tool to find strings in multiple files
+.SH SYNOPSIS
+.B sagasu [string [dir]]
+.SH DESCRIPTION
+.PP
+\fBsagasu\fR
+is a GNOME tool to find strings in a set of files.
+The user specifies the search directory and the set of files
+to be searched.  Double-clicking on a search result launches a
+user command that can for example load the file in an editor
+at the appropriate line.  The search can recurse into subdirectories
+and can optionally ignore CVS directories.
+.PP
+Two optional command-line arguments can be given:
+the first is the initial search string
+and the second is the directory whose files will be searched.
+If only one argument is given, it is taken as the search string.
+No search is actually started, but the appropriate fields are initialized.
+Any subsequent arguments are ignored.
+.PP
+More documentation is available through the application's Help menu.
+.PP
+.SH OPTIONS
+.PP
+.TP
+\fB\-\-help\fR
+display a help page and exit
+.TP
+\fB\-\-version\fR
+display version information and exit
+.PP
+.SH LICENSE
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License.  This program has absolutely no warranty.
+.SH AUTHOR
+Pierre Sarrazin
+.PP
+See the Sagasu Home Page:
+.br
+http://sarrazip.com/dev/sagasu.html
+.SH BUGS
+The files to be searches are still assumed to be in Latin-1, not in UTF-8.
+The same goes for the command-line arguments and the terminal to which
+Sagasu is connected, if applicable.
+.SH HISTORY
+Sagasu is a Japanese word that means "to search."

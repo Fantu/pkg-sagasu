@@ -1,0 +1,39 @@
+sagasu (2.0.10-1) unstable; urgency=low
+
+  * New upstream release (Closes: 586535)
+  * changed watch file (Closes: 529136)
+
+ -- Daniel Gubser <guterm@debian.org>  Mon, 28 Jun 2010 11:25:24 +0200
+
+sagasu (2.0.8-3) unstable; urgency=low
+
+  * added missing #includes (Closes: #455374)
+  * corrected link in debian/watch file (Closes: #450116)
+
+ -- Daniel Gubser <guterm@debian.org>  Thu,  6 Mar 2008 21:49:56 +0100
+
+sagasu (2.0.8-2) unstable; urgency=low
+
+  * changed src/util.cpp for new GCC 4.3 (Closes: #417679) 
+
+ -- Daniel Gubser <guterm@debian.org>  Fri,  1 Jun 2007 17:17:58 +0200
+
+sagasu (2.0.8-1) unstable; urgency=low
+
+  * New upstream release (Closes: #336000)
+  * compiles now with GNOME 2.12 (Closes: #327319)
+
+ -- Daniel Gubser <guterm@debian.org>  Sun, 19 Feb 2006 03:09:19 +0100
+
+sagasu (2.0.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Daniel Gubser <guterm@debian.org>  Tue, 27 Sep 2005 04:23:57 +0200
+
+sagasu (2.0.5-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #217017)
+
+ -- Daniel Gubser <guterm@debian.org>  Fri,  7 May 2004 06:45:49 +0200
+

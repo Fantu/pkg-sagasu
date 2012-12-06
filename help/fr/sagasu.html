@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+  <TITLE>Sagasu</TITLE>
+  <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</HEAD>
+<BODY>
+
+<H1>Sagasu</H1>
+
+
+<P>
+<STRONG>Sagasu</STRONG>
+est un outil GNOME cherchant des chaines dans un ensemble de fichiers.
+L'usager spécifie le répertoire de recherche et l'ensemble
+des fichiers à fouiller.
+Un double-clic sur un résultat de recherche démarre une commande
+spécifiée par l'usager qui peut par exemple
+ouvrir un éditeur sur le fichier concerné, à la bonne ligne.
+La recherche peut optionnellement ignorer les répertoires CVS.
+</P>
+
+<P>
+Deux <STRONG>arguments</STRONG> peuvent optionnellement être
+données sur la ligne de commande:
+le premier est le <STRONG>texte cible</STRONG> initial
+et le second est le <STRONG>répertoire</STRONG> dont les
+fichiers seront fouillés.
+Si un seul argument est donné, il est pris comme texte cible.
+Aucune recherche n'est démarrée, mais les champs appropriés
+sont initialisés.
+Tout argument subséquent est ignoré.
+</P>
+
+<P>
+Exemple: <CODE>sagasu printf /usr/include</CODE>
+</P>
+
+
+<H2>Le dialogue</H2>
+
+<H3>Champs</H3>
+
+<P>
+Le champ <STRONG>Texte cible</STRONG> reçoit la chaine à rechercher.
+Cette chaine peut être une expression régulière Perl.
+Vous pouvez démarrer la recherche en cliquant sur le bouton
+<STRONG>Chercher</STRONG> ou en appuyant sur la touche
+<STRONG>Enter</STRONG> dans un champ de texte.
+</P>
+
+<P>
+Le champ <STRONG>Fichiers cibles</STRONG> reçoit une liste de
+groupes de fichiers, séparés par des espaces, qui définit
+l'ensemble des fichiers à fouiller.
+Le bouton <STRONG>Défauts</STRONG> à la droite de ce champ
+lui redonne sa valeur par défaut, qui est
+<STRONG>*.c *.cc *.C *.cpp *.cxx *.h</STRONG>.
+Pour fouiller tous les makefiles dans un projet,
+vous pourriez spécifier un groupe comme <STRONG>Makefile*</STRONG>
+afin d'inclure tous les fichiers <STRONG>Makefile.in</STRONG>
+et <STRONG>Makefile.am</STRONG>.
+</P>
+
+<P>
+Le champ <STRONG>Répertoire de recherche</STRONG>
+reçoit le nom du répertoire dont les fichiers seront fouillés.
+Le bouton <STRONG>Parcourir...</STRONG> affiche un dialogue
+de sélection de fichiers.
+Vous pouvez aussi taper le nom de répertoire manuellement.
+La notation <STRONG>~usager</STRONG> est acceptée.
+Un <STRONG>~</STRONG> tout seul réfère au répertoire principal
+de l'usager courant.
+
+<P>
+Dans le champ
+<STRONG>Commande d'édition</STRONG>, le terme <STRONG>%f</STRONG>
+peut être utilisé pour représenter le nom de fichier se trouvant dans
+la ligne double-cliquée.
+Le terme
+<STRONG>%n</STRONG>
+peut être utilisé pour représenter le numéro de ligne.
+Par exemple, pour démarrer l'éditeur
+<STRONG>vi</STRONG> dans un terminal GNOME, utilisez cette commande:
+</P>
+
+<PRE>
+<STRONG>gnome-terminal -e "vi +%n '%f'"</STRONG>
+</PRE>
+
+<P>
+Ceci s'avère la commande par défaut.
+Le bouton <STRONG>Défaut</STRONG> à la droite du champ
+lui redonne cette valeur.
+</P>
+
+
+<H3>Options de recherche</H3>
+
+<P>
+Des cases à cocher vous permettent de déterminer:
+</P>
+
+<UL>
+<LI> si la recherche se limitera à des mots complets
+    (équivalent à l'option <STRONG>-w</STRONG> de la commande grep,
+    où à l'opérateur <STRONG>\b</STRONG> des expressions régulières Perl);
+    </LI>
+<LI> si la recherche tiendra compte de la casse des lettres; </LI>
+<LI> si l'expression de recherche sera prise comme une
+    expression régulière Perl ou une chaine fixe à être trouvée
+    telle quelle; </LI>
+<LI> si les sous-répertoires nommés 'CVS' seront ignorés lors
+    d'une récursion; </LI>
+<LI> si les répertoires qui sont atteint via un lien symbolique
+    seront ignorés lors d'une récursion. </LI>
+</UL>
+<P>
+Il y a aussi un champ numérique où vous pouvez spécifier la profondeur
+de sous-répertoires qui sera explorée par la recherche.
+Si vous spécifiez zéro, seuls les fichiers du répertoire de recherche
+seront fouillés, et non pas les fichiers situés dans des sous-répertoires.
+</P>
+
+
+<H2>Onglets de résultats</H2>
+
+<P>
+L'application démarre avec un seul onglet de résultats, initialement vide.
+L'espace de texte sous un onglet est l'endroit où s'affichent les
+résultats d'une recherche.
+Vous pouvez créer d'autres onglets avec la commande
+<STRONG>Nouvel onglet</STRONG> du menu <STRONG>Fichier</STRONG>.
+Vous pouvez aussi le faire avec l'équivalent-clavier <STRONG>Ctl+N</STRONG>.
+</P>
+
+<P>
+Chaque onglet a un numéro et une icône 'x'.
+Cette icône peut être cliquée pour fermer l'onglet.
+Vous ne pouvez fermer un onglet s'il n'y en a pas d'autre.
+</P>
+
+<P>
+Durant et après une recherche, le nombre de lignes trouvées 
+et le nombre de fichiers trouvés sont affichés sous l'espace de texte.
+</P>
+
+<P>
+Vous pouvez <STRONG>double-cliquer</STRONG>
+sur une ligne dans les résultats
+pour <STRONG>exécuter la «commande d'édition.»</STRONG>
+La commande d'édition par défaut démarre l'éditeur de texte
+<STRONG>vi</STRONG>
+dans le terminal GNOME.
+vi accepte un argument optionnel de la forme +<EM>N</EM>
+où <EM>N</EM> est le numéro de ligne où le curseur sera
+positionné initialement.
+</P>
+
+
+<P>
+En bas de la fenêtre de Sagasu se trouve un champ de texte où
+vous pouvez <STRONG>entrer du texte à être cherché dans l'onglet
+présentement sélectionné</STRONG>.
+Cliquez le bouton «Trouver dans résultats» pour démarrer
+la recherche.
+À la droite de ce bouton, Sagasu affichera soit à quel
+pourcentage dans le texte résultant la chaine a été trouvée,
+soit que la chaine n'a pas été trouvée.
+Cette recherche ne tient pas compte de la casse des lettres.
+</P>
+
+
+<H2>Enregistrement de la configuration</H2>
+
+<P>
+Les paramètres de recherche et la taille de la fenêtre principale
+sont enregistrés dans un fichier de configuration GNOME
+(~/.gnome/sagasu) quand le bouton <STRONG>Chercher</STRONG>
+est cliqué et quand l'application termine.
+Ces paramètres comprennent les champs de texte et les cases
+à cocher, mais pas l'ensemble des onglets ouverts.
+</P>
+
+
+<H2>Interrompre la recherche</H2>
+
+<P>
+Quand une recherche commence, le bouton <STRONG>Chercher</STRONG>
+devient un bouton <STRONG>Arrêter</STRONG>.
+Vous pouvez cliquer ce bouton pour interrompre la recherche.
+</P>
+
+
+<H2>Options à la ligne de commande</H2>
+
+<DL>
+<DT> --help </DT>
+    <DD> affiche une page d'aide et quitte </DD>
+<DT> --version </DT>
+    <DD> affiche le numéro de version et quitte </DD>
+</DL>
+
+
+<H2>Licence</H2>
+
+<P>
+Ce programme est un logiciel libre;
+vous pouvez le redistribuer sous les termes de la
+Licence publique générale (GPL) du projet GNU.
+Ce programme n'a absolument aucune garantie.
+</P>
+
+
+<H2>Auteur</H2>
+
+<UL>
+<LI> Pierre Sarrazin </LI>
+</UL>
+
+<P>
+Voyez la <A HREF="http://sarrazip.com/dev/sagasu.html">page Web de Sagasu</A>.
+</P>
+
+
+<H2>Bogues</H2>
+
+<UL>
+<LI> Si les fichiers cibles comprennent des fichiers binaires,
+    ceux-ci ne seront pas ignorés comme ils devraient probablement l'être.
+    </LI>
+</UL>
+
+
+<H2>Histoire</H2>
+
+<P>
+Sagasu est un mot japonais qui veut dire «chercher.»
+Par manque de talent, j'éprouve beaucoup de difficulté
+à trouver des noms de logiciels qui ne soient pas déjà pris,
+surtout s'ils sont basés sur l'anglais, le français ou le latin.
+L'exploration du vocabulaire japonais s'est avérée fertile.
+</P>
+
+
+</BODY>
+</HTML>

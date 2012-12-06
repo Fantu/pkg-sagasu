@@ -1,0 +1,9 @@
+# List of source files containing translatable strings.
+
+src/main.cpp
+src/ResultPage.cpp
+src/ResultPage.h
+src/SagasuApp.cpp
+src/SagasuApp.h
+src/util.cpp
+src/util.h

@@ -1,0 +1,29 @@
+sagasu - GNOME tool to find strings in a set of files
+Copyright (C) 2002-2010 Pierre Sarrazin <http://sarrazip.com/>
+
+This program is free software distributed under the GNU GPL.
+See the file COPYING for details.
+
+This program can be installed with the familiar sequence:
+
+    ./configure
+    make
+    make install
+
+See the file INSTALL for details.  A manual page (sagasu.1) is provided.
+
+Sagasu requires a GNOME 2 installation and a Perl interpreter.
+
+
+NOTE: if you compile the code from the sources and wish to run
+the executable without having run 'make install', then you must
+run it this way:
+
+    cd src
+    PKGDATADIR=. PIXMAPDIR=images ./sagasu
+
+
+See the Sagasu Home Page:
+
+    http://sarrazip.com/dev/sagasu.html
+
