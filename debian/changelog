@@ -1,9 +1,10 @@
-sagasu (2.0.10-2) UNRELEASED; urgency=low
+sagasu (2.0.12-1) UNRELEASED; urgency=low
 
   * New upstream release (Closes: #690806, #695023)
   * Bumped up Standards-Version to 3.9.4 and improve package.
+  * Only include <glib.h> instead of individual header files (Closes: #665609)
 
--- Fabio Fantoni <fabio.fantoni@heliman.it>  Thu, 06 Dec 2012 16:18:51 +0100
+ -- Fabio Fantoni <fabio.fantoni@heliman.it>  Thu, 06 Dec 2012 16:18:51 +0100
 
 sagasu (2.0.10-1) unstable; urgency=low
 
