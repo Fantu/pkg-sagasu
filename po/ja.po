@@ -5,10 +5,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 20:11-0400\n"
+"POT-Creation-Date: 2012-11-24 19:37-0500\n"
 "PO-Revision-Date: 2003-05-16 19:42+0900\n"
 "Last-Translator: UTUMI Hirosi <utuhiro@mx12.freecom.ne.jp>\n"
 "Language-Team:  <ja@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,119 +23,111 @@ msgstr "余分な引数は無視しました"
 msgid "No results yet."
 msgstr "検索結果がありません"
 
-#: src/SagasuApp.cpp:194
+#: src/SagasuApp.cpp:195
 msgid "Distributed under the GNU General Public License"
 msgstr ""
 
-#: src/SagasuApp.cpp:197 src/SagasuApp.cpp:547 src/SagasuApp.cpp:548
+#: src/SagasuApp.cpp:199 src/SagasuApp.cpp:547 src/SagasuApp.cpp:548
 msgid "Sagasu"
 msgstr "Sagasu"
 
-#: src/SagasuApp.cpp:201
+#: src/SagasuApp.cpp:203
 msgid "GNOME tool to find strings in a set of files"
 msgstr "ファイル内の語句を検索するGNOMEツール"
 
-#: src/SagasuApp.cpp:259
+#: src/SagasuApp.cpp:261
 msgid "_New tab"
 msgstr "新規タブ(_N)"
 
-#: src/SagasuApp.cpp:260 src/SagasuApp.cpp:321
+#: src/SagasuApp.cpp:262 src/SagasuApp.cpp:319
 msgid "Create a new tab in which to display search results"
 msgstr "検索結果を表示する新しいタブを作成"
 
-#: src/SagasuApp.cpp:264
+#: src/SagasuApp.cpp:266
 msgid "Go to _first tab"
 msgstr "最初のタブに移動(_f)"
 
-#: src/SagasuApp.cpp:265 src/SagasuApp.cpp:326
+#: src/SagasuApp.cpp:267 src/SagasuApp.cpp:324
 msgid "Go to the leftmost tab"
 msgstr "左端のタブに移動"
 
-#: src/SagasuApp.cpp:268
+#: src/SagasuApp.cpp:270
 msgid "P_revious tab"
 msgstr "前のタブ(_r)"
 
-#: src/SagasuApp.cpp:269 src/SagasuApp.cpp:331
+#: src/SagasuApp.cpp:271 src/SagasuApp.cpp:329
 msgid "Go to the tab at the left of the current one"
 msgstr "現在のタブの左のタブに移動"
 
-#: src/SagasuApp.cpp:274
+#: src/SagasuApp.cpp:276
 msgid "Nex_t tab"
 msgstr "次のタブ(_t)"
 
-#: src/SagasuApp.cpp:275 src/SagasuApp.cpp:336
+#: src/SagasuApp.cpp:277 src/SagasuApp.cpp:334
 msgid "Go to the tab at the right of the current one"
 msgstr "現在のタブの右のタブに移動"
 
-#: src/SagasuApp.cpp:280
+#: src/SagasuApp.cpp:282
 msgid "Go to _last tab"
 msgstr "最後のタブに移動(_l)"
 
-#: src/SagasuApp.cpp:281 src/SagasuApp.cpp:341
+#: src/SagasuApp.cpp:283 src/SagasuApp.cpp:339
 msgid "Go to the rightmost tab"
 msgstr "右端のタブに移動"
 
-#: src/SagasuApp.cpp:284
+#: src/SagasuApp.cpp:286
 msgid "_Close tab"
 msgstr "タブを閉じる(_C)"
 
-#: src/SagasuApp.cpp:285
+#: src/SagasuApp.cpp:287
 msgid "Close the current result page"
 msgstr "現在のタブを閉じる"
 
-#: src/SagasuApp.cpp:296
-msgid "_Say the word \"sagasu\""
-msgstr "sagasuを発音する"
-
-#: src/SagasuApp.cpp:297
-msgid "Play a sound file that pronounces the word \"sagasu\""
-msgstr "sagasu の発音を聞く"
-
-#: src/SagasuApp.cpp:300
+#: src/SagasuApp.cpp:298
 msgid "Go to Sagasu _Home Page"
 msgstr "Sagasuのホームページに行く(_H)"
 
-#: src/SagasuApp.cpp:301
+#: src/SagasuApp.cpp:299
 msgid "Open the Sagasu Home Page in a browser"
 msgstr "Sagasuのホームページをブラウザで開く"
 
-#: src/SagasuApp.cpp:310
+#: src/SagasuApp.cpp:308
 msgid "_Tabs"
 msgstr "タブ(_T)"
 
-#: src/SagasuApp.cpp:320
+#: src/SagasuApp.cpp:318
 msgid "New tab"
 msgstr "新規タブ"
 
-#: src/SagasuApp.cpp:325
+#: src/SagasuApp.cpp:323
 msgid "First tab"
 msgstr "最初のタブ"
 
-#: src/SagasuApp.cpp:330
+#: src/SagasuApp.cpp:328
 msgid "Previous tab"
 msgstr "前のタブ"
 
-#: src/SagasuApp.cpp:335
+#: src/SagasuApp.cpp:333
 msgid "Next tab"
 msgstr "次のタブ"
 
-#: src/SagasuApp.cpp:340
+#: src/SagasuApp.cpp:338
 msgid "Last tab"
 msgstr "最後のタブ"
 
-#: src/SagasuApp.cpp:345
+#: src/SagasuApp.cpp:343
 msgid "New search"
 msgstr ""
 
-#: src/SagasuApp.cpp:346
+#: src/SagasuApp.cpp:344
 msgid "Empty the search string field"
 msgstr ""
 
-#: src/SagasuApp.cpp:351
+#: src/SagasuApp.cpp:349
 msgid "Quit"
 msgstr "終了"
 
-#: src/SagasuApp.cpp:352
+#: src/SagasuApp.cpp:350
 msgid "Quit the program"
 msgstr "プログラムを終了する"
 
@@ -150,137 +143,143 @@ msgstr "検索(_S)"
 msgid "Searching..."
 msgstr "検索中.."
 
-#: src/SagasuApp.cpp:586
+#: src/SagasuApp.cpp:587
 msgid "Search strin_g:"
 msgstr "検索する語句(_g):"
 
-#: src/SagasuApp.cpp:589
+#: src/SagasuApp.cpp:590
 msgid "File _patterns:"
 msgstr "ファイルのパターン(_p):"
 
-#: src/SagasuApp.cpp:590
+#: src/SagasuApp.cpp:591 src/SagasuApp.cpp:595
 msgid "_Defaults"
 msgstr "デフォルト(_D)"
 
-#: src/SagasuApp.cpp:591
+#: src/SagasuApp.cpp:592
 msgid "Se_arch directory:"
 msgstr "検索するディレクトリ(_a):"
 
-#: src/SagasuApp.cpp:592
+#: src/SagasuApp.cpp:593
 msgid "_Browse..."
 msgstr "参照(_B).."
 
-#: src/SagasuApp.cpp:593
+#: src/SagasuApp.cpp:594
+msgid "Excluded d_irectories:"
+msgstr ""
+
+#: src/SagasuApp.cpp:596
 msgid "Edit_or command:"
 msgstr "エディタのコマンド(_o):"
 
-#: src/SagasuApp.cpp:594
+#: src/SagasuApp.cpp:597
 msgid "D_efault"
 msgstr "デフォルト(_e)"
 
-#: src/SagasuApp.cpp:642
+#: src/SagasuApp.cpp:645
 msgid "Match _whole words"
 msgstr "語句全体が一致(_w)"
 
-#: src/SagasuApp.cpp:643
+#: src/SagasuApp.cpp:646
 msgid "Match _case"
 msgstr "大文字小文字を区別する(_c)"
 
-#: src/SagasuApp.cpp:644
+#: src/SagasuApp.cpp:647
 msgid "Use Perl rege_x"
 msgstr "Perl rege_xを使う"
 
-#: src/SagasuApp.cpp:646
-msgid "Exclude C_VS dirs"
-msgstr "C_VS dirは除外する"
-
-#: src/SagasuApp.cpp:647
+#: src/SagasuApp.cpp:650
 msgid "Exclude sym_linked dirs"
 msgstr "シンボリックリンクのdirは除外(_l)"
 
-#: src/SagasuApp.cpp:668
+#: src/SagasuApp.cpp:671
 msgid "Dir _recursion depth:"
 msgstr ""
 
-#: src/SagasuApp.cpp:709
+#: src/SagasuApp.cpp:719
 msgid "Find in res_ults:"
 msgstr "検索結果の中を検索(_u):"
 
-#: src/SagasuApp.cpp:710
+#: src/SagasuApp.cpp:720
 msgid "F_ind"
 msgstr "検索(_i)"
 
-#: src/SagasuApp.cpp:743 src/SagasuApp.cpp:744
+#: src/SagasuApp.cpp:753 src/SagasuApp.cpp:754
 msgid "Ready."
 msgstr "準備完了"
 
-#: src/SagasuApp.cpp:827
+#: src/SagasuApp.cpp:839
 msgid "Interrupted"
 msgstr "中断"
 
-#: src/SagasuApp.cpp:964
+#: src/SagasuApp.cpp:971
 msgid "Search directory is not accessible"
 msgstr "検索ディレクトリにアクセスできません"
 
-#: src/SagasuApp.cpp:977
+#: src/SagasuApp.cpp:984
 msgid "Error when creating a pipe"
 msgstr "パイプを作成中にエラーが発生"
 
-#: src/SagasuApp.cpp:991
+#: src/SagasuApp.cpp:998
 msgid "Error when creating the search process"
 msgstr "検索プロセスを実行中にエラーが発生"
 
-#: src/SagasuApp.cpp:1045
+#: src/SagasuApp.cpp:1052
 msgid "Search string:"
 msgstr "検索する語句:"
 
-#: src/SagasuApp.cpp:1104
+#: src/SagasuApp.cpp:1111
 msgid "Matching lines"
 msgstr "一致した行"
 
-#: src/SagasuApp.cpp:1105
+#: src/SagasuApp.cpp:1112
 msgid "matching files"
 msgstr "一致したファイル"
 
-#: src/SagasuApp.cpp:1106
+#: src/SagasuApp.cpp:1113
 msgid "(still searching)"
 msgstr "(検索中)"
 
-#: src/SagasuApp.cpp:1282
+#: src/SagasuApp.cpp:1289
 msgid "Error when creating the editor process"
 msgstr "エディタのプロセスを実行中にエラーが発生"
 
-#: src/SagasuApp.cpp:1537
+#: src/SagasuApp.cpp:1548
 msgid "Not found"
 msgstr "見つかりません"
 
-#: src/SagasuApp.cpp:1550
+#: src/SagasuApp.cpp:1561
 msgid "Found at:"
 msgstr "以下で検出:"
 
-#: src/SagasuApp.cpp:1613
+#: src/SagasuApp.cpp:1624
 msgid "Select search directory"
 msgstr "検索するディレクトリを選んでください"
 
-#: src/SagasuApp.cpp:1685
+#: src/SagasuApp.cpp:1704
 msgid "Directory not found."
 msgstr "ディレクトリがありません"
 
-#: src/SagasuApp.cpp:1692
+#: src/SagasuApp.cpp:1711
 msgid "Not a directory."
 msgstr "ディレクトリではありません"
 
-#: src/SagasuApp.cpp:1738
+#: src/SagasuApp.cpp:1757
 msgid "Error when opening Sagasu Home Page"
 msgstr "Sagasuのホームページを開く際にエラーが発生"
 
-#: src/SagasuApp.cpp:1858
+#: src/SagasuApp.cpp:1877
 msgid "Tab numbers restarted at 1"
 msgstr "タブの番号を１から再スタートします"
 
 #: src/util.cpp:153
 msgid "URL:"
 msgstr "URL:"
+
+#~ msgid "_Say the word \"sagasu\""
+#~ msgstr "sagasuを発音する"
+
+#~ msgid "Play a sound file that pronounces the word \"sagasu\""
+#~ msgstr "sagasu の発音を聞く"
 
 #~ msgid "View this Program's _License (GPL)"
 #~ msgstr "このプログラムのライセンスを見る(GPL)(_L)"

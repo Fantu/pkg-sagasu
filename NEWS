@@ -1,3 +1,16 @@
+2012-11-24: Version 2.0.12 released
+
+    Checkbox to exclude CVS directories replaced with text field
+    where user can specify list of directories to exclude.
+
+2012-10-29: Version 2.0.11 released
+
+    Danish translation added.
+    Help menu's "Say the word 'sagasu'" command removed because
+    gnome_sound_play() function is now deprecated and malfunctioning.
+    Fixed compilation warning by processing return value of system()
+    function call.
+
 2010-06-19: Version 2.0.10 released
 
     Czech translation added.

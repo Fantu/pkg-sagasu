@@ -1,8 +1,8 @@
-/*  $Id: SagasuApp.h,v 1.11 2010/05/19 01:12:10 sarrazip Exp $
+/*  $Id: SagasuApp.h,v 1.13 2012/11/25 00:58:21 sarrazip Exp $
     SagasuApp.h - Class representing the main window
 
     sagasu - GNOME tool to find strings in a set of files
-    Copyright (C) 2002-2004 Pierre Sarrazin <http://sarrazip.com/>
+    Copyright (C) 2002-2012 Pierre Sarrazin <http://sarrazip.com/>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -16,8 +16,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-    02111-1307, USA.
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301, USA.
 */
 
 #ifndef _H_SagasuApp
@@ -60,7 +60,6 @@ public:
     bool match_case() const;
     bool use_regex() const;
     gint dir_recursion_depth() const;
-    bool exclude_cvs_dirs() const;
     bool exclude_symlinked_dirs() const;
     /*
 	These methods return the state of the search parameter checkboxes.
@@ -133,23 +132,25 @@ private:
     GtkWidget *search_string_entry;
     GtkWidget *file_patterns_entry;
     GtkWidget *search_dir_entry;
+    GtkWidget *excl_dirs_entry;
     GtkWidget *editor_cmd_entry;
 
     GtkWidget *search_button;
     GtkWidget *default_file_patterns_button;
     GtkWidget *browse_search_dir_button;
+    GtkWidget *default_excl_dirs_button;
     GtkWidget *default_editor_cmd_button;
 
     GtkWidget *match_whole_words_button;
     GtkWidget *match_case_button;
     GtkWidget *use_perl_regex_button;
     GtkWidget *dir_recursion_depth_spin_button;
-    GtkWidget *exclude_cvs_dirs_button;
     GtkWidget *exclude_symlinked_dirs_button;
 
     GtkWidget *result_notebook;
     unsigned long next_notebook_page_num;
     std::string default_file_patterns;
+    std::string default_excl_dirs;
     std::string default_editor_command;
     GIOChannel *input_channel;
     int input_fd;
@@ -185,7 +186,7 @@ private:
 				const std::string &file_patterns,
 				bool match_case,
 				gint recursion_depth,
-				bool exclude_cvs_dirs,
+				const std::string &excl_dirs,
 				bool exclude_symlinked_dirs);
     void close_input();
 

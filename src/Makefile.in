@@ -15,7 +15,7 @@
 
 @SET_MAKE@
 
-# $Id: Makefile.am,v 1.8 2007/09/23 16:21:06 sarrazip Exp $
+# $Id: Makefile.am,v 1.10 2011/01/01 20:30:24 sarrazip Exp $
 
 
 VPATH = @srcdir@
@@ -66,8 +66,7 @@ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_CLEAN_FILES = sagasu.desktop
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" \
-	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pkgdatadir)" \
-	"$(DESTDIR)$(pkgsounddir)"
+	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pkgdatadir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_sagasu_OBJECTS = sagasu-main.$(OBJEXT) sagasu-SagasuApp.$(OBJEXT) \
 	sagasu-ResultPage.$(OBJEXT) sagasu-util.$(OBJEXT)
@@ -112,7 +111,7 @@ am__nobase_list = $(am__nobase_strip_setup); \
 am__base_list = \
   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
-DATA = $(desktop_DATA) $(pixmap_DATA) $(pkgdata_DATA) $(pkgsound_DATA)
+DATA = $(desktop_DATA) $(pixmap_DATA) $(pkgdata_DATA)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -129,6 +128,7 @@ CATOBJEXT = @CATOBJEXT@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
+COPYRIGHT_YEARS = @COPYRIGHT_YEARS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
@@ -180,20 +180,24 @@ OBJEXT = @OBJEXT@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_CATEGORIES = @PACKAGE_CATEGORIES@
-PACKAGE_DESC_EN = @PACKAGE_DESC_EN@
-PACKAGE_DESC_FR = @PACKAGE_DESC_FR@
 PACKAGE_FULL_NAME_EN = @PACKAGE_FULL_NAME_EN@
 PACKAGE_FULL_NAME_FR = @PACKAGE_FULL_NAME_FR@
 PACKAGE_HOME_PAGE = @PACKAGE_HOME_PAGE@
 PACKAGE_NAME = @PACKAGE_NAME@
 PACKAGE_STRING = @PACKAGE_STRING@
+PACKAGE_SUMMARY_EN = @PACKAGE_SUMMARY_EN@
+PACKAGE_SUMMARY_FR = @PACKAGE_SUMMARY_FR@
 PACKAGE_TARNAME = @PACKAGE_TARNAME@
+PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 PERL = @PERL@
 PKG_CONFIG = @PKG_CONFIG@
+PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
+PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
 POSUB = @POSUB@
 RANLIB = @RANLIB@
+RELEASE_DATE = @RELEASE_DATE@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
@@ -253,7 +257,6 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 pixmapdir = $(datadir)/pixmaps
-pkgsounddir = $(datadir)/sounds/$(PACKAGE)
 desktopdir = $(datadir)/applications
 sagasu_SOURCES = \
 	main.cpp \
@@ -272,8 +275,9 @@ sagasu_CXXFLAGS = \
 	-I$(srcdir)/intl \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	-DPIXMAPDIR=\"$(pixmapdir)\" \
-	-DPKGSOUNDDIR=\"$(pkgsounddir)\" \
 	-DPACKAGE_HOME_PAGE=\"$(PACKAGE_HOME_PAGE)\" \
+	-DCOPYRIGHT_YEARS=\"$(COPYRIGHT_YEARS)\" \
+	-DRELEASE_DATE=\"$(RELEASE_DATE)\" \
 	$(LIBGNOMEUI_CFLAGS)
 
 sagasu_LDADD = $(LIBGNOMEUI_LIBS) $(INTLLIBS)
@@ -284,9 +288,8 @@ pixmap_DATA = \
 	images/$(PACKAGE).png \
 	images/close.xpm
 
-pkgsound_DATA = sounds/sagasu.wav
 desktop_DATA = $(PACKAGE).desktop
-EXTRA_DIST = $(pkgdata_DATA) $(pixmap_DATA) $(pkgsound_DATA)
+EXTRA_DIST = $(pkgdata_DATA) $(pixmap_DATA)
 MAINTAINERCLEANFILES = Makefile.in
 all: all-am
 
@@ -505,26 +508,6 @@ uninstall-pkgdataDATA:
 	test -n "$$files" || exit 0; \
 	echo " ( cd '$(DESTDIR)$(pkgdatadir)' && rm -f" $$files ")"; \
 	cd "$(DESTDIR)$(pkgdatadir)" && rm -f $$files
-install-pkgsoundDATA: $(pkgsound_DATA)
-	@$(NORMAL_INSTALL)
-	test -z "$(pkgsounddir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsounddir)"
-	@list='$(pkgsound_DATA)'; test -n "$(pkgsounddir)" || list=; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(pkgsounddir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(pkgsounddir)" || exit $$?; \
-	done
-
-uninstall-pkgsoundDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(pkgsound_DATA)'; test -n "$(pkgsounddir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	test -n "$$files" || exit 0; \
-	echo " ( cd '$(DESTDIR)$(pkgsounddir)' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(pkgsounddir)" && rm -f $$files
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
@@ -612,7 +595,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(PROGRAMS) $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pkgdatadir)" "$(DESTDIR)$(pkgsounddir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pkgdatadir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -664,7 +647,7 @@ info: info-am
 info-am:
 
 install-data-am: install-desktopDATA install-pixmapDATA \
-	install-pkgdataDATA install-pkgsoundDATA
+	install-pkgdataDATA
 
 install-dvi: install-dvi-am
 
@@ -710,8 +693,7 @@ ps: ps-am
 ps-am:
 
 uninstall-am: uninstall-binPROGRAMS uninstall-desktopDATA \
-	uninstall-pixmapDATA uninstall-pkgdataDATA \
-	uninstall-pkgsoundDATA
+	uninstall-pixmapDATA uninstall-pkgdataDATA
 
 .MAKE: install-am install-strip
 
@@ -723,18 +705,16 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktopDATA \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-info install-info-am install-man \
 	install-pdf install-pdf-am install-pixmapDATA \
-	install-pkgdataDATA install-pkgsoundDATA install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
-	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
-	ps ps-am tags uninstall uninstall-am uninstall-binPROGRAMS \
-	uninstall-desktopDATA uninstall-pixmapDATA \
-	uninstall-pkgdataDATA uninstall-pkgsoundDATA
+	install-pkgdataDATA install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
+	uninstall-am uninstall-binPROGRAMS uninstall-desktopDATA \
+	uninstall-pixmapDATA uninstall-pkgdataDATA
 
 
 run: all
 	PKGDATADIR=$(srcdir) \
-		PKGSOUNDDIR=$(srcdir)/sounds \
 		PIXMAPDIR=$(srcdir)/images \
 		./$(PACKAGE)
 

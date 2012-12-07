@@ -8,7 +8,7 @@ Standards-Version: 3.9.4
 Homepage: http://perso.b2b2c.ca/sarrazip/dev/sagasu.html
 
 Package: sagasu
-Architecture: linux-any
+Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
 Description: GNOME tool to find strings in a set of files

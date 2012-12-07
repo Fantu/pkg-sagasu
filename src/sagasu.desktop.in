@@ -2,11 +2,11 @@
 Name=@PACKAGE_FULL_NAME_EN@
 Name[fr]=@PACKAGE_FULL_NAME_FR@
 Name[cs]=Sagasu
-Categories=X-Red-Hat-Base;@PACKAGE_CATEGORIES@
-Comment=@PACKAGE_DESC_EN@
-Comment[fr]=@PACKAGE_DESC_FR@
+Categories=@PACKAGE_CATEGORIES@
+Comment=@PACKAGE_SUMMARY_EN@
+Comment[fr]=@PACKAGE_SUMMARY_FR@
 Comment[cs]=Nástroj GNOME pro hledání řetězců v souborech
 Exec=@PACKAGE@
-Icon=@PACKAGE@.png
-Terminal=0
+Icon=@PACKAGE@
+Terminal=false
 Type=Application

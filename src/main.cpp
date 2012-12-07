@@ -1,4 +1,4 @@
-/*  $Id: main.cpp,v 1.5 2009/03/16 02:38:24 sarrazip Exp $
+/*  $Id: main.cpp,v 1.6 2012/11/25 00:58:22 sarrazip Exp $
     main.cpp - main() function to initialize the GNOME 2 application
 
     sagasu - GNOME tool to find strings in a set of files
@@ -16,8 +16,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-    02111-1307, USA.
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301, USA.
 */
 
 #include "SagasuApp.h"
@@ -81,7 +81,7 @@ main(int argc, char *argv[])
 		GNOME_PARAM_POPT_TABLE, options,
 		GNOME_PARAM_APP_DATADIR, DATADIR,
 		NULL);
-    gtk_window_set_default_icon_from_file(GNOMEICONDIR "/" PACKAGE ".png", NULL);
+    gnome_window_icon_set_default_from_file(GNOMEICONDIR "/" PACKAGE ".png");
 
 
     // Argument parsing:

@@ -1,9 +1,9 @@
 #!/usr/bin/perl -w
-# $Id: sagasu-helper.pl,v 1.4 2004/06/12 01:32:10 sarrazip Exp $
+# $Id: sagasu-helper.pl,v 1.6 2012/11/25 00:58:22 sarrazip Exp $
 # sagasu-helper.pl - Search script for Sagasu - Assumes Latin-1 files
 #
 # sagasu - GNOME tool to find strings in a set of files
-# Copyright (C) 2002-2004 Pierre Sarrazin <http://sarrazip.com/>
+# Copyright (C) 2002-2012 Pierre Sarrazin <http://sarrazip.com/>
 # 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,8 +17,9 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-# 02111-1307, USA.
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+# 02110-1301, USA.
+
 
 use strict;
 use DirHandle;
@@ -40,11 +41,11 @@ my $errPrefix = "*** ";  # string that distinguishes error messages from rest
 if (@ARGV != 7 || @ARGV >= 1 && $ARGV[0] eq "--help")
 {
     print <<EOF;
-Usage: $0 target-expr dir patterns \
-		case-sensitive exclude-cvs exclude-symlink-dirs max-depth
+Usage: $0 target-expr dir patterns case-sensitive excluded-dirs exclude-symlink-dirs max-depth
 
 'patterns' must be space separated list of file patterns.
-'case-sensitive', 'exclude-cvs', and 'exclude-symlink-dirs' must be 1 or 0.
+'case-sensitive' and 'exclude-symlink-dirs' must be 1 or 0.
+'excluded-dirs' must be a space separated list of directory names.
 'max-depth' must be the maximum number of subdirectories into which the
 recursion is allowed to go.  Zero means search only the current directory.
 EOF
@@ -59,9 +60,20 @@ $exts =~ s/\*/\.\*/g;
 
 my @filePatterns = split(/ +/, $exts);
 my $caseSensitive = ($ARGV[3] ne "0");
-my $excludeCVSDirs = ($ARGV[4] ne "0");
+
+my @excludedDirs;
+for my $dir (split /\s+/, $ARGV[4])
+{
+    next if $dir =~ /^\s+$/;  # exclude blank string
+
+    # Escape regex operators in directory name.
+    $dir =~ s/([-\$\(\)\*\+\.\/\?\@\[\\\]\^\|])/\\$1/g;
+    push @excludedDirs, $dir;
+}
+my $excludeDirsRegex = '^(' . join("|", @excludedDirs) . ')$';
+#print "excludeDirsRegex={$excludeDirsRegex}\n";
+
 my $excludeSymlinkDirs = ($ARGV[5] ne "0");
-#my $recurseDirs = ($ARGV[4] ne "0");
 my $maxDepth = ($ARGV[6] =~ /^(\d+)$/ ? $1 : 0);
 $maxDepth = 20 if $maxDepth > 20;
 
@@ -117,7 +129,7 @@ sub searchDirTree
 	my $fullname = ($searchDir eq "/" ? "" : "$searchDir") . "/$filename";
 	if ($depth < $maxDepth && (!$excludeSymlinkDirs || ! -l $fullname))
 	{
-	    if (!$excludeCVSDirs || $filename ne "CVS")
+	    if ($filename !~ /$excludeDirsRegex/)  # case-senstive comparison
 	    {
 		searchDirTree($targetExpr,
 			$fullname, $raFilePatterns, $caseSensitive,

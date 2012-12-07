@@ -1,8 +1,8 @@
-/*  $Id: callbacks.h,v 1.4 2006/09/04 14:39:06 sarrazip Exp $
+/*  $Id: callbacks.h,v 1.7 2012/11/25 00:58:22 sarrazip Exp $
     callbacks.h - partial list of callbacks formatted for preprocessor tricks
 
     sagasu - GNOME tool to find strings in a set of files
-    Copyright (C) 2002-2004 Pierre Sarrazin <http://sarrazip.com/>
+    Copyright (C) 2002-2012 Pierre Sarrazin <http://sarrazip.com/>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -16,8 +16,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-    02111-1307, USA.
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301, USA.
 */
 
 WIDGET_AND_POINTER_CALLBACK(create_new_result_page_cb)
@@ -32,9 +32,9 @@ WIDGET_AND_POINTER_CALLBACK(close_current_tab_cb)
 WIDGET_AND_POINTER_CALLBACK(search_cb)
 WIDGET_AND_POINTER_CALLBACK(default_file_patterns_cb)
 WIDGET_AND_POINTER_CALLBACK(browse_search_dir_cb)
+WIDGET_AND_POINTER_CALLBACK(default_excl_dirs_cb)
 WIDGET_AND_POINTER_CALLBACK(default_editor_cmd_cb)
 WIDGET_AND_POINTER_CALLBACK(entry_changed_cb)
 WIDGET_AND_POINTER_CALLBACK(result_search_entry_changed_cb)
 WIDGET_AND_POINTER_CALLBACK(result_search_button_clicked_cb)
 WIDGET_AND_POINTER_CALLBACK(home_page_cb)
-WIDGET_AND_POINTER_CALLBACK(say_sagasu_cb)

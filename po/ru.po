@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagasu_ru\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 20:11-0400\n"
+"POT-Creation-Date: 2012-11-24 19:37-0500\n"
 "PO-Revision-Date: 2003-10-23 20:01+0400\n"
 "Last-Translator: Alexandre Prokoudine <avp@altlinux.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,119 +27,111 @@ msgstr "лишние аргументы не учитываются"
 msgid "No results yet."
 msgstr "Пока никаких результатов."
 
-#: src/SagasuApp.cpp:194
+#: src/SagasuApp.cpp:195
 msgid "Distributed under the GNU General Public License"
 msgstr ""
 
-#: src/SagasuApp.cpp:197 src/SagasuApp.cpp:547 src/SagasuApp.cpp:548
+#: src/SagasuApp.cpp:199 src/SagasuApp.cpp:547 src/SagasuApp.cpp:548
 msgid "Sagasu"
 msgstr "Sagasu"
 
-#: src/SagasuApp.cpp:201
+#: src/SagasuApp.cpp:203
 msgid "GNOME tool to find strings in a set of files"
 msgstr "Поисковой инструмент для GNOME"
 
-#: src/SagasuApp.cpp:259
+#: src/SagasuApp.cpp:261
 msgid "_New tab"
 msgstr "_Новая закладка"
 
-#: src/SagasuApp.cpp:260 src/SagasuApp.cpp:321
+#: src/SagasuApp.cpp:262 src/SagasuApp.cpp:319
 msgid "Create a new tab in which to display search results"
 msgstr "Создать новую закладку для отображения результатов поиска"
 
-#: src/SagasuApp.cpp:264
+#: src/SagasuApp.cpp:266
 msgid "Go to _first tab"
 msgstr "Перейти к пе_рвой закладке"
 
-#: src/SagasuApp.cpp:265 src/SagasuApp.cpp:326
+#: src/SagasuApp.cpp:267 src/SagasuApp.cpp:324
 msgid "Go to the leftmost tab"
 msgstr "Перейти к самой левой закладке"
 
-#: src/SagasuApp.cpp:268
+#: src/SagasuApp.cpp:270
 msgid "P_revious tab"
 msgstr "_Предыдущая"
 
-#: src/SagasuApp.cpp:269 src/SagasuApp.cpp:331
+#: src/SagasuApp.cpp:271 src/SagasuApp.cpp:329
 msgid "Go to the tab at the left of the current one"
 msgstr "Перейти к закладке слева от текущей"
 
-#: src/SagasuApp.cpp:274
+#: src/SagasuApp.cpp:276
 msgid "Nex_t tab"
 msgstr "_Следующая"
 
-#: src/SagasuApp.cpp:275 src/SagasuApp.cpp:336
+#: src/SagasuApp.cpp:277 src/SagasuApp.cpp:334
 msgid "Go to the tab at the right of the current one"
 msgstr "Перейти к закладке справа от текущей"
 
-#: src/SagasuApp.cpp:280
+#: src/SagasuApp.cpp:282
 msgid "Go to _last tab"
 msgstr "Перейти к пос_ледней закладке"
 
-#: src/SagasuApp.cpp:281 src/SagasuApp.cpp:341
+#: src/SagasuApp.cpp:283 src/SagasuApp.cpp:339
 msgid "Go to the rightmost tab"
 msgstr "Перейти к самой правой закладке"
 
-#: src/SagasuApp.cpp:284
+#: src/SagasuApp.cpp:286
 msgid "_Close tab"
 msgstr "_Закрыть закладку"
 
-#: src/SagasuApp.cpp:285
+#: src/SagasuApp.cpp:287
 msgid "Close the current result page"
 msgstr "Закрыть текущую страницу с результатами"
 
-#: src/SagasuApp.cpp:296
-msgid "_Say the word \"sagasu\""
-msgstr "_Послушать, как произносится \"sagasu\""
-
-#: src/SagasuApp.cpp:297
-msgid "Play a sound file that pronounces the word \"sagasu\""
-msgstr "Воспроизвести звуковой файл, где произносится \"sagasu\""
-
-#: src/SagasuApp.cpp:300
+#: src/SagasuApp.cpp:298
 msgid "Go to Sagasu _Home Page"
 msgstr "Перейти к _домашней странице Sagasu"
 
-#: src/SagasuApp.cpp:301
+#: src/SagasuApp.cpp:299
 msgid "Open the Sagasu Home Page in a browser"
 msgstr "Открыть домашнюю страницу Sagasu в браузере"
 
-#: src/SagasuApp.cpp:310
+#: src/SagasuApp.cpp:308
 msgid "_Tabs"
 msgstr "_Закладки"
 
-#: src/SagasuApp.cpp:320
+#: src/SagasuApp.cpp:318
 msgid "New tab"
 msgstr "Новая"
 
-#: src/SagasuApp.cpp:325
+#: src/SagasuApp.cpp:323
 msgid "First tab"
 msgstr "Первая"
 
-#: src/SagasuApp.cpp:330
+#: src/SagasuApp.cpp:328
 msgid "Previous tab"
 msgstr "Предыдущая"
 
-#: src/SagasuApp.cpp:335
+#: src/SagasuApp.cpp:333
 msgid "Next tab"
 msgstr "Следующая"
 
-#: src/SagasuApp.cpp:340
+#: src/SagasuApp.cpp:338
 msgid "Last tab"
 msgstr "Последняя"
 
-#: src/SagasuApp.cpp:345
+#: src/SagasuApp.cpp:343
 msgid "New search"
 msgstr "Новый поиск"
 
-#: src/SagasuApp.cpp:346
+#: src/SagasuApp.cpp:344
 msgid "Empty the search string field"
 msgstr "Очистить после запроса"
 
-#: src/SagasuApp.cpp:351
+#: src/SagasuApp.cpp:349
 msgid "Quit"
 msgstr "Выйти"
 
-#: src/SagasuApp.cpp:352
+#: src/SagasuApp.cpp:350
 msgid "Quit the program"
 msgstr "Выйти из программы"
 
@@ -154,137 +147,143 @@ msgstr "_Искать"
 msgid "Searching..."
 msgstr "Идёт поиск..."
 
-#: src/SagasuApp.cpp:586
+#: src/SagasuApp.cpp:587
 msgid "Search strin_g:"
 msgstr "Искать стро_ку:"
 
-#: src/SagasuApp.cpp:589
+#: src/SagasuApp.cpp:590
 msgid "File _patterns:"
 msgstr "Шаблоны _файлов:"
 
-#: src/SagasuApp.cpp:590
+#: src/SagasuApp.cpp:591 src/SagasuApp.cpp:595
 msgid "_Defaults"
 msgstr "_По умолчанию"
 
-#: src/SagasuApp.cpp:591
+#: src/SagasuApp.cpp:592
 msgid "Se_arch directory:"
 msgstr "Каталог для пои_ска:"
 
-#: src/SagasuApp.cpp:592
+#: src/SagasuApp.cpp:593
 msgid "_Browse..."
 msgstr "_Просмотреть..."
 
-#: src/SagasuApp.cpp:593
+#: src/SagasuApp.cpp:594
+msgid "Excluded d_irectories:"
+msgstr ""
+
+#: src/SagasuApp.cpp:596
 msgid "Edit_or command:"
 msgstr "Коман_да редактора:"
 
-#: src/SagasuApp.cpp:594
+#: src/SagasuApp.cpp:597
 msgid "D_efault"
 msgstr "По _умолчанию"
 
-#: src/SagasuApp.cpp:642
+#: src/SagasuApp.cpp:645
 msgid "Match _whole words"
 msgstr "Только _целые слова"
 
-#: src/SagasuApp.cpp:643
+#: src/SagasuApp.cpp:646
 msgid "Match _case"
 msgstr "Учитывать регистр"
 
-#: src/SagasuApp.cpp:644
+#: src/SagasuApp.cpp:647
 msgid "Use Perl rege_x"
 msgstr "Использовать регулярные _выражения Perl"
 
-#: src/SagasuApp.cpp:646
-msgid "Exclude C_VS dirs"
-msgstr "Исключить ка_талоги CVS"
-
-#: src/SagasuApp.cpp:647
+#: src/SagasuApp.cpp:650
 msgid "Exclude sym_linked dirs"
 msgstr "Исключить каталоги по символ. ссылкам"
 
-#: src/SagasuApp.cpp:668
+#: src/SagasuApp.cpp:671
 msgid "Dir _recursion depth:"
 msgstr "Глубина _рекурсии по каталогам:"
 
-#: src/SagasuApp.cpp:709
+#: src/SagasuApp.cpp:719
 msgid "Find in res_ults:"
 msgstr "Найти в резул_ьтатах:"
 
-#: src/SagasuApp.cpp:710
+#: src/SagasuApp.cpp:720
 msgid "F_ind"
 msgstr "Иск_ать"
 
-#: src/SagasuApp.cpp:743 src/SagasuApp.cpp:744
+#: src/SagasuApp.cpp:753 src/SagasuApp.cpp:754
 msgid "Ready."
 msgstr "Готово."
 
-#: src/SagasuApp.cpp:827
+#: src/SagasuApp.cpp:839
 msgid "Interrupted"
 msgstr "Прервано"
 
-#: src/SagasuApp.cpp:964
+#: src/SagasuApp.cpp:971
 msgid "Search directory is not accessible"
 msgstr "Каталог для поиска недоступен"
 
-#: src/SagasuApp.cpp:977
+#: src/SagasuApp.cpp:984
 msgid "Error when creating a pipe"
 msgstr "Произошла ошибка при создании канала"
 
-#: src/SagasuApp.cpp:991
+#: src/SagasuApp.cpp:998
 msgid "Error when creating the search process"
 msgstr "Произошла ошибка при создании процесса поиска"
 
-#: src/SagasuApp.cpp:1045
+#: src/SagasuApp.cpp:1052
 msgid "Search string:"
 msgstr "Искать строку:"
 
-#: src/SagasuApp.cpp:1104
+#: src/SagasuApp.cpp:1111
 msgid "Matching lines"
 msgstr "Количество строк"
 
-#: src/SagasuApp.cpp:1105
+#: src/SagasuApp.cpp:1112
 msgid "matching files"
 msgstr "Количество файлов"
 
-#: src/SagasuApp.cpp:1106
+#: src/SagasuApp.cpp:1113
 msgid "(still searching)"
 msgstr "(поиск пока не закончен)"
 
-#: src/SagasuApp.cpp:1282
+#: src/SagasuApp.cpp:1289
 msgid "Error when creating the editor process"
 msgstr "Произошла ошибка при создании процесса редактора"
 
-#: src/SagasuApp.cpp:1537
+#: src/SagasuApp.cpp:1548
 msgid "Not found"
 msgstr "Не найдено"
 
-#: src/SagasuApp.cpp:1550
+#: src/SagasuApp.cpp:1561
 msgid "Found at:"
 msgstr "Найдено в:"
 
-#: src/SagasuApp.cpp:1613
+#: src/SagasuApp.cpp:1624
 msgid "Select search directory"
 msgstr "Выберите каталог для поиска"
 
-#: src/SagasuApp.cpp:1685
+#: src/SagasuApp.cpp:1704
 msgid "Directory not found."
 msgstr "Каталог не найден."
 
-#: src/SagasuApp.cpp:1692
+#: src/SagasuApp.cpp:1711
 msgid "Not a directory."
 msgstr "Это не каталог."
 
-#: src/SagasuApp.cpp:1738
+#: src/SagasuApp.cpp:1757
 msgid "Error when opening Sagasu Home Page"
 msgstr "Произошла ошибка при открытии домашней странице Sagasu"
 
-#: src/SagasuApp.cpp:1858
+#: src/SagasuApp.cpp:1877
 msgid "Tab numbers restarted at 1"
 msgstr "Номера закладок перестроены с 1"
 
 #: src/util.cpp:153
 msgid "URL:"
 msgstr "URL:"
+
+#~ msgid "_Say the word \"sagasu\""
+#~ msgstr "_Послушать, как произносится \"sagasu\""
+
+#~ msgid "Play a sound file that pronounces the word \"sagasu\""
+#~ msgstr "Воспроизвести звуковой файл, где произносится \"sagasu\""
 
 #~ msgid "View this Program's _License (GPL)"
 #~ msgstr "Прочитать _лицензию на эту программу (GPL)"

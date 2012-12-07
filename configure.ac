@@ -1,21 +1,25 @@
-# $Id: configure.ac,v 1.22 2010/05/31 00:11:49 sarrazip Exp $
+# $Id: configure.ac,v 1.29 2012/11/25 00:58:19 sarrazip Exp $
 
 AC_PREREQ(2.50)
 AC_INIT(src/main.cpp)
-AM_INIT_AUTOMAKE(sagasu, 2.0.10)
+AM_INIT_AUTOMAKE(sagasu, 2.0.12)
 
 # Package description:
 PACKAGE_FULL_NAME_EN=Sagasu
 PACKAGE_FULL_NAME_FR=Sagasu
-PACKAGE_DESC_EN="GNOME tool to find strings in a set of files"
-PACKAGE_DESC_FR="Outil GNOME cherchant des chaines dans des fichiers"
-PACKAGE_CATEGORIES="Accessories;Application;Utility;"
+PACKAGE_SUMMARY_EN="GNOME tool to find strings in a set of files"
+PACKAGE_SUMMARY_FR="Outil GNOME cherchant des chaines dans des fichiers"
+PACKAGE_CATEGORIES="Utility;"
+COPYRIGHT_YEARS="2002-2012"
+RELEASE_DATE="2012-11-24"
 
 AC_SUBST(PACKAGE_FULL_NAME_EN)
 AC_SUBST(PACKAGE_FULL_NAME_FR)
-AC_SUBST(PACKAGE_DESC_EN)
-AC_SUBST(PACKAGE_DESC_FR)
+AC_SUBST(PACKAGE_SUMMARY_EN)
+AC_SUBST(PACKAGE_SUMMARY_FR)
 AC_SUBST(PACKAGE_CATEGORIES)
+AC_SUBST(COPYRIGHT_YEARS)
+AC_SUBST(RELEASE_DATE)
 
 PACKAGE_HOME_PAGE="http://sarrazip.com/dev/sagasu.html"
 AC_SUBST(PACKAGE_HOME_PAGE)

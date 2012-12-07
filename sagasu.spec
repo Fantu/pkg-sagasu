@@ -1,4 +1,4 @@
-# $Id: sagasu.spec.in,v 1.9 2006/08/31 22:29:15 sarrazip Exp $
+# $Id: sagasu.spec.in,v 1.14 2012/11/25 00:58:19 sarrazip Exp $
 
 # RPM .spec file
 
@@ -8,7 +8,7 @@
 # Source archive's extension can be specified with rpm --define 'srcext .foo'
 # where .foo is the source archive's actual extension.
 # To compile an RPM from a .bz2 source archive, give the command
-#   rpmbuild -ta --define 'srcext .bz2' sagasu-2.0.10.tar.bz2
+#   rpmbuild -ta --define 'srcext .bz2' sagasu-2.0.12.tar.bz2
 #
 %if %{?rel:0}%{!?rel:1}
 %define rel 1
@@ -18,16 +18,19 @@
 %endif
 
 Summary: GNOME tool to find strings in a set of files
+Summary(fr): Outil GNOME cherchant des chaines dans des fichiers
 Name: sagasu
-Version: 2.0.10
+Version: 2.0.12
 Release: %{rel}
 License: GPL
 Group: Applications/Text
-Source: %{name}-%{version}.tar%{srcext}
+Source0: %{name}-%{version}.tar%{srcext}
 URL: http://sarrazip.com/dev/sagasu.html
 Prefix: /usr
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: libgnomeui-devel >= 2.8.0
+BuildRequires: gettext
+BuildRequires: desktop-file-utils
 Requires: libgnomeui >= 2.8.0
 
 %description
@@ -55,20 +58,20 @@ La recherche peut optionnellement ignorer les répertoires CVS.
 make %{?_smp_mflags}
 
 %install
-rm -fR $RPM_BUILD_ROOT
-make DESTDIR=$RPM_BUILD_ROOT install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+%find_lang %{name}
+desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.desktop
 
 %clean
 rm -fR $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(-, root, root)
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
 %{_datadir}/sagasu
-%{_datadir}/sounds/sagasu
-%{_datadir}/locale/*/LC_MESSAGES/*
 %{_datadir}/gnome/help/*/*/*
 %{_mandir}/man*/*
 %doc %{_defaultdocdir}/*

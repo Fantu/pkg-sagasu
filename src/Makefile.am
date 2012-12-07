@@ -1,9 +1,8 @@
-# $Id: Makefile.am,v 1.8 2007/09/23 16:21:06 sarrazip Exp $
+# $Id: Makefile.am,v 1.10 2011/01/01 20:30:24 sarrazip Exp $
 
 localedir = $(datadir)/locale
 pixmapdir = $(datadir)/pixmaps
 pkgdatadir = $(datadir)/$(PACKAGE)
-pkgsounddir = $(datadir)/sounds/$(PACKAGE)
 desktopdir = $(datadir)/applications
 
 bin_PROGRAMS = sagasu
@@ -25,8 +24,9 @@ sagasu_CXXFLAGS = \
 	-I$(srcdir)/intl \
 	-DPKGDATADIR=\"$(pkgdatadir)\" \
 	-DPIXMAPDIR=\"$(pixmapdir)\" \
-	-DPKGSOUNDDIR=\"$(pkgsounddir)\" \
 	-DPACKAGE_HOME_PAGE=\"$(PACKAGE_HOME_PAGE)\" \
+	-DCOPYRIGHT_YEARS=\"$(COPYRIGHT_YEARS)\" \
+	-DRELEASE_DATE=\"$(RELEASE_DATE)\" \
 	$(LIBGNOMEUI_CFLAGS)
 
 sagasu_LDADD = $(LIBGNOMEUI_LIBS) $(INTLLIBS)
@@ -40,13 +40,10 @@ pixmap_DATA = \
 	images/$(PACKAGE).png \
 	images/close.xpm
 
-pkgsound_DATA = sounds/sagasu.wav
-
 desktop_DATA = $(PACKAGE).desktop
 
 run: all
 	PKGDATADIR=$(srcdir) \
-		PKGSOUNDDIR=$(srcdir)/sounds \
 		PIXMAPDIR=$(srcdir)/images \
 		./$(PACKAGE)
 
@@ -57,7 +54,7 @@ check:
 	./$(PACKAGE) --help >& /dev/null
 
 
-EXTRA_DIST = $(pkgdata_DATA) $(pixmap_DATA) $(pkgsound_DATA)
+EXTRA_DIST = $(pkgdata_DATA) $(pixmap_DATA)
 
 
 MAINTAINERCLEANFILES = Makefile.in

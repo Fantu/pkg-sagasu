@@ -1,278 +1,289 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Pierre Sarrazin <http://sarrazip.com/>
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danish translation sagasu.
+# Copyright (C) 2012 sagasu & nedenstående oversættere.
+# This file is distributed under the same license as the sagasu package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2012.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: sagasu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-11-24 19:37-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-10-15 17:30+01:00\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/main.cpp:102
 msgid "superfluous arguments ignored"
-msgstr ""
+msgstr "overflødige parametre ignoreret"
 
 #: src/ResultPage.cpp:40
 msgid "No results yet."
-msgstr ""
+msgstr "Ingen resultater endnu."
 
 #: src/SagasuApp.cpp:195
 msgid "Distributed under the GNU General Public License"
-msgstr ""
+msgstr "Distribueret under GNU General Public License"
 
 #: src/SagasuApp.cpp:199 src/SagasuApp.cpp:547 src/SagasuApp.cpp:548
 msgid "Sagasu"
-msgstr ""
+msgstr "Sagasu"
 
 #: src/SagasuApp.cpp:203
 msgid "GNOME tool to find strings in a set of files"
-msgstr ""
+msgstr "GNOME-værktøj til at finde strenge i et sæt af filer"
 
 #: src/SagasuApp.cpp:261
 msgid "_New tab"
-msgstr ""
+msgstr "_Nyt faneblad"
 
 #: src/SagasuApp.cpp:262 src/SagasuApp.cpp:319
 msgid "Create a new tab in which to display search results"
-msgstr ""
+msgstr "Opret et nyt faneblad hvor søgeresultaterne vises"
 
 #: src/SagasuApp.cpp:266
 msgid "Go to _first tab"
-msgstr ""
+msgstr "Gå til _første faneblad"
 
 #: src/SagasuApp.cpp:267 src/SagasuApp.cpp:324
 msgid "Go to the leftmost tab"
-msgstr ""
+msgstr "Gå til det yderste venstre faneblad"
 
 #: src/SagasuApp.cpp:270
 msgid "P_revious tab"
-msgstr ""
+msgstr "Fo_rrige faneblad"
 
 #: src/SagasuApp.cpp:271 src/SagasuApp.cpp:329
 msgid "Go to the tab at the left of the current one"
-msgstr ""
+msgstr "Gå til fanebladet venstre for det aktuelle"
 
 #: src/SagasuApp.cpp:276
 msgid "Nex_t tab"
-msgstr ""
+msgstr "_Næste faneblad"
 
 #: src/SagasuApp.cpp:277 src/SagasuApp.cpp:334
 msgid "Go to the tab at the right of the current one"
-msgstr ""
+msgstr "Gå til fanebladet højre for det aktuelle"
 
 #: src/SagasuApp.cpp:282
 msgid "Go to _last tab"
-msgstr ""
+msgstr "Gå til _sidste faneblad"
 
 #: src/SagasuApp.cpp:283 src/SagasuApp.cpp:339
 msgid "Go to the rightmost tab"
-msgstr ""
+msgstr "Gå til det yderste højre faneblad"
 
 #: src/SagasuApp.cpp:286
 msgid "_Close tab"
-msgstr ""
+msgstr "_Luk faneblad"
 
 #: src/SagasuApp.cpp:287
 msgid "Close the current result page"
-msgstr ""
+msgstr "Luk den aktuelle resultatside"
 
 #: src/SagasuApp.cpp:298
 msgid "Go to Sagasu _Home Page"
-msgstr ""
+msgstr "Gå til Sagasus _hjemmeside"
 
 #: src/SagasuApp.cpp:299
 msgid "Open the Sagasu Home Page in a browser"
-msgstr ""
+msgstr "Åbn Sagasus hjemmeside i en browser"
 
 #: src/SagasuApp.cpp:308
 msgid "_Tabs"
-msgstr ""
+msgstr "_Faneblade"
 
 #: src/SagasuApp.cpp:318
 msgid "New tab"
-msgstr ""
+msgstr "Nyt faneblad"
 
 #: src/SagasuApp.cpp:323
 msgid "First tab"
-msgstr ""
+msgstr "Første faneblad"
 
 #: src/SagasuApp.cpp:328
 msgid "Previous tab"
-msgstr ""
+msgstr "Forrige faneblad"
 
 #: src/SagasuApp.cpp:333
 msgid "Next tab"
-msgstr ""
+msgstr "Næste faneblad"
 
 #: src/SagasuApp.cpp:338
 msgid "Last tab"
-msgstr ""
+msgstr "Sidste faneblad"
 
 #: src/SagasuApp.cpp:343
 msgid "New search"
-msgstr ""
+msgstr "Ny søgning"
 
 #: src/SagasuApp.cpp:344
 msgid "Empty the search string field"
-msgstr ""
+msgstr "Tøm søgestrengsfeltet"
 
 #: src/SagasuApp.cpp:349
 msgid "Quit"
-msgstr ""
+msgstr "Afslut"
 
 #: src/SagasuApp.cpp:350
 msgid "Quit the program"
-msgstr ""
+msgstr "Afslut programmet"
 
 #: src/SagasuApp.cpp:481
 msgid "_Stop"
-msgstr ""
+msgstr "_Stop"
 
 #: src/SagasuApp.cpp:481
 msgid "_Search"
-msgstr ""
+msgstr "_Søg"
 
 #: src/SagasuApp.cpp:508
 msgid "Searching..."
-msgstr ""
+msgstr "Søger ..."
 
 #: src/SagasuApp.cpp:587
 msgid "Search strin_g:"
-msgstr ""
+msgstr "Søgestren_g:"
 
 #: src/SagasuApp.cpp:590
 msgid "File _patterns:"
-msgstr ""
+msgstr "_Filmønstre:"
 
+# er godt nok flertal, men standard virker fint her, da det er en standardlinje
 #: src/SagasuApp.cpp:591 src/SagasuApp.cpp:595
 msgid "_Defaults"
-msgstr ""
+msgstr "S_tandard"
 
 #: src/SagasuApp.cpp:592
 msgid "Se_arch directory:"
-msgstr ""
+msgstr "S_øg mappe:"
 
 #: src/SagasuApp.cpp:593
 msgid "_Browse..."
-msgstr ""
+msgstr "_Gennemse ..."
 
 #: src/SagasuApp.cpp:594
 msgid "Excluded d_irectories:"
 msgstr ""
 
+# ikke for lang, selv om redigeringsprogramkommando er mere korrekt
 #: src/SagasuApp.cpp:596
 msgid "Edit_or command:"
-msgstr ""
+msgstr "Redigeringskommando:"
 
+# Egentlig den samme som Defaults, og her er der også flere valg, men
+# den her er i ental.
 #: src/SagasuApp.cpp:597
 msgid "D_efault"
-msgstr ""
+msgstr "St_andard"
 
 #: src/SagasuApp.cpp:645
 msgid "Match _whole words"
-msgstr ""
+msgstr "Match _hele ord"
 
+# store/små bogstaver nok bedre forståelsesmæssigt, men versalfølsom bedre pladsmæssigt
+# nogenlunde samme længde som Exclude CVS dirs er at foretrække.
 #: src/SagasuApp.cpp:646
 msgid "Match _case"
-msgstr ""
+msgstr "Store/små bogstaver"
 
 #: src/SagasuApp.cpp:647
 msgid "Use Perl rege_x"
-msgstr ""
+msgstr "_Brug Perl-regulære udtryk"
 
 #: src/SagasuApp.cpp:650
 msgid "Exclude sym_linked dirs"
-msgstr ""
+msgstr "Udelad mappe med symbolske henvisninger"
 
 #: src/SagasuApp.cpp:671
 msgid "Dir _recursion depth:"
-msgstr ""
+msgstr "_Rekursionsdybde for mappe:"
 
 #: src/SagasuApp.cpp:719
 msgid "Find in res_ults:"
-msgstr ""
+msgstr "Find i res_ultater:"
 
 #: src/SagasuApp.cpp:720
 msgid "F_ind"
-msgstr ""
+msgstr "F_ind"
 
 #: src/SagasuApp.cpp:753 src/SagasuApp.cpp:754
 msgid "Ready."
-msgstr ""
+msgstr "Klar."
 
 #: src/SagasuApp.cpp:839
 msgid "Interrupted"
-msgstr ""
+msgstr "Afbrudt"
 
 #: src/SagasuApp.cpp:971
 msgid "Search directory is not accessible"
-msgstr ""
+msgstr "Søgemappe er ikke tilgængelig"
 
 #: src/SagasuApp.cpp:984
 msgid "Error when creating a pipe"
-msgstr ""
+msgstr "Fejl under oprettelse af datakanal"
 
 #: src/SagasuApp.cpp:998
 msgid "Error when creating the search process"
-msgstr ""
+msgstr "Fejl under oprettelse af søgeprocessen"
 
 #: src/SagasuApp.cpp:1052
 msgid "Search string:"
-msgstr ""
+msgstr "Søgestreng:"
 
 #: src/SagasuApp.cpp:1111
 msgid "Matching lines"
-msgstr ""
+msgstr "Matchende linjer"
 
 #: src/SagasuApp.cpp:1112
 msgid "matching files"
-msgstr ""
+msgstr "matchende filer"
 
 #: src/SagasuApp.cpp:1113
 msgid "(still searching)"
-msgstr ""
+msgstr "(søger stadig)"
 
 #: src/SagasuApp.cpp:1289
 msgid "Error when creating the editor process"
-msgstr ""
+msgstr "Fejl under oprettelse af redigeringsprogrammets proces"
 
 #: src/SagasuApp.cpp:1548
 msgid "Not found"
-msgstr ""
+msgstr "Ikke fundet"
 
 #: src/SagasuApp.cpp:1561
 msgid "Found at:"
-msgstr ""
+msgstr "Fundet i:"
 
 #: src/SagasuApp.cpp:1624
 msgid "Select search directory"
-msgstr ""
+msgstr "Vælg søgemappe"
 
 #: src/SagasuApp.cpp:1704
 msgid "Directory not found."
-msgstr ""
+msgstr "Mappe blev ikke fundet."
 
 #: src/SagasuApp.cpp:1711
 msgid "Not a directory."
-msgstr ""
+msgstr "Ikke en mappe."
 
 #: src/SagasuApp.cpp:1757
 msgid "Error when opening Sagasu Home Page"
-msgstr ""
+msgstr "Fejl ved åbning af Sagasus hjemmeside"
 
 #: src/SagasuApp.cpp:1877
 msgid "Tab numbers restarted at 1"
-msgstr ""
+msgstr "Fanebladsnumre genstartet ved 1"
 
 #: src/util.cpp:153
 msgid "URL:"
-msgstr ""
+msgstr "Adresse:"
+
+#~ msgid "_Say the word \"sagasu\""
+#~ msgstr "_Sig ordet »sagasu«"
+
+#~ msgid "Play a sound file that pronounces the word \"sagasu\""
+#~ msgstr "Afspil en lydfil som udtaler ordet »sagasu«"

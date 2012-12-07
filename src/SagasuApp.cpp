@@ -1,8 +1,8 @@
-/*  $Id: SagasuApp.cpp,v 1.23 2010/05/31 00:11:49 sarrazip Exp $
+/*  $Id: SagasuApp.cpp,v 1.27 2012/11/25 00:58:21 sarrazip Exp $
     SagasuApp.cpp - Class representing the main window
 
     sagasu - GNOME tool to find strings in a set of files
-    Copyright (C) 2002-2004 Pierre Sarrazin <http://sarrazip.com/>
+    Copyright (C) 2002-2012 Pierre Sarrazin <http://sarrazip.com/>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -16,8 +16,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-    02111-1307, USA.
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301, USA.
 */
 
 #include "SagasuApp.h"
@@ -42,6 +42,7 @@
 #include <fcntl.h>
 #include <math.h>
 #include <errno.h>
+#include <stdio.h>
 
 #include <iostream>
 #include <fstream>
@@ -57,12 +58,12 @@ using namespace std;
 static const char *SEARCH_STRING_PATH = "Search/String";
 static const char *FILE_PATTERNS_PATH = "Search/FilePatterns";
 static const char *SEARCH_DIR_PATH = "Search/Directory";
+static const char *EXCL_DIRS_PATH = "Search/ExcludedDirectories";
 static const char *EDITOR_COMMAND_PATH = "Commands/Editor";
 static const char *MATCH_WHOLE_WORDS_PATH = "Options/MatchWord";
 static const char *MATCH_CASE_PATH = "Options/MatchCase";
 static const char *USE_PERL_REGEX_PATH = "Options/UsePerlRegex";
 static const char *DIR_RECURSION_DEPTH_PATH = "Options/DirRecursionDepth";
-static const char *EXCLUDE_CVS_DIRS_PATH = "Options/ExcludeCVSDirs";
 static const char *EXCLUDE_SYMLINKED_DIRS_PATH = "Options/ExcludeSymlinkedDirs";
 
 static const guint BORDER = 4;
@@ -190,8 +191,9 @@ about_cb(GtkWidget * /*widget*/, gpointer /*data*/)
 	GdkPixbuf *logo = gdk_pixbuf_new_from_file(
 					logo_filename.c_str(), NULL);
 	string copyright = string(
-	     "Copyright (C) 2002-2006 Pierre Sarrazin <http://sarrazip.com/>\n")
-			+ _("Distributed under the GNU General Public License");
+	     "Copyright (C) " COPYRIGHT_YEARS " Pierre Sarrazin <http://sarrazip.com/>\n")
+			+ _("Distributed under the GNU General Public License")
+            + "\n" + RELEASE_DATE;
 
 	GtkWidget *about = gtk_about_dialog_new();
 	gtk_about_dialog_set_name(GTK_ABOUT_DIALOG(about), _("Sagasu"));
@@ -293,10 +295,6 @@ GnomeUIInfo help_menu[] =
 {
     GNOMEUIINFO_HELP(PACKAGE),
     GNOMEUIINFO_ITEM_NONE(
-	N_("_Say the word \"sagasu\""),
-	N_("Play a sound file that pronounces the word \"sagasu\""),
-	::say_sagasu_cb),
-    GNOMEUIINFO_ITEM_NONE(
 	N_("Go to Sagasu _Home Page"),
 	N_("Open the Sagasu Home Page in a browser"),
 	::home_page_cb),
@@ -383,23 +381,25 @@ SagasuApp::SagasuApp(const string &init_search_expr,
     search_string_entry(NULL),
     file_patterns_entry(NULL),
     search_dir_entry(NULL),
+    excl_dirs_entry(NULL),
     editor_cmd_entry(NULL),
 
     search_button(NULL),
     default_file_patterns_button(NULL),
     browse_search_dir_button(NULL),
+    default_excl_dirs_button(NULL),
     default_editor_cmd_button(NULL),
 
     match_whole_words_button(NULL),
     match_case_button(NULL),
     use_perl_regex_button(NULL),
     dir_recursion_depth_spin_button(NULL),
-    exclude_cvs_dirs_button(NULL),
     exclude_symlinked_dirs_button(NULL),
 
     result_notebook(NULL),
     next_notebook_page_num(1),
     default_file_patterns("*.c *.cc *.C *.cpp *.cxx *.h"),
+    default_excl_dirs("CVS .git .hg .svn"),
     default_editor_command("gnome-terminal -e \"vi +%n '%f'\""),
     input_channel(NULL),
     input_fd(-1),
@@ -498,7 +498,7 @@ SagasuApp::show_working_state(bool busy)
     gtk_widget_set_sensitive(
 		GTK_WIDGET(dir_recursion_depth_spin_button), !busy);
     gtk_widget_set_sensitive(
-		GTK_WIDGET(exclude_cvs_dirs_button), !busy);
+		GTK_WIDGET(default_excl_dirs_button), !busy);
     gtk_widget_set_sensitive(
 		GTK_WIDGET(exclude_symlinked_dirs_button), !busy);
 
@@ -571,6 +571,7 @@ SagasuApp::build_user_interface(const std::string &init_search_expr,
     search_string_entry = gtk_entry_new();
     file_patterns_entry = gtk_entry_new();
     search_dir_entry = gtk_entry_new();
+    excl_dirs_entry = gtk_entry_new();
     editor_cmd_entry = gtk_entry_new();
 
     struct
@@ -590,6 +591,8 @@ SagasuApp::build_user_interface(const std::string &init_search_expr,
 				_("_Defaults"), ::default_file_patterns_cb },
 	{ &browse_search_dir_button, search_dir_entry, _("Se_arch directory:"),
 				_("_Browse..."), ::browse_search_dir_cb },
+	{ &default_excl_dirs_button, excl_dirs_entry, _("Excluded d_irectories:"),
+				_("_Defaults"), ::default_excl_dirs_cb },
 	{ &default_editor_cmd_button, editor_cmd_entry, _("Edit_or command:"),
 				_("D_efault"), ::default_editor_cmd_cb },
 	{ NULL, NULL, NULL, NULL, NULL },
@@ -642,16 +645,16 @@ SagasuApp::build_user_interface(const std::string &init_search_expr,
 	{ &match_whole_words_button, _("Match _whole words") },
 	{ &match_case_button, _("Match _case") },
 	{ &use_perl_regex_button, _("Use Perl rege_x") },
-	{ NULL, "" },
-	{ &exclude_cvs_dirs_button, _("Exclude C_VS dirs") },
+	{ NULL, "rec" },
+	{ NULL, "empty" },
 	{ &exclude_symlinked_dirs_button, _("Exclude sym_linked dirs") },
 	{ NULL, NULL }
     };
 
     for (i = 0; buttons[i].button_text != NULL; i++)
     {
-	GtkWidget *w;
-	if (buttons[i].check_button == NULL)
+	GtkWidget *w = NULL;
+	if (buttons[i].check_button == NULL && strcmp(buttons[i].button_text, "rec") == 0)
 	{
 	    /*
 		Exception: in this slot, we now put a spin button that
@@ -674,6 +677,12 @@ SagasuApp::build_user_interface(const std::string &init_search_expr,
 	    gtk_box_pack_start(GTK_BOX(w),
 			dir_recursion_depth_spin_button, FALSE, FALSE, 0);
 	}
+	else if (buttons[i].check_button == NULL && strcmp(buttons[i].button_text, "empty") == 0)
+        {
+            /*
+               This used to be the place for the "Excluded CVS dirs" checkbox.
+            */
+        }
 	else
 	{
 	    w = gtk_check_button_new_with_mnemonic(
@@ -682,7 +691,8 @@ SagasuApp::build_user_interface(const std::string &init_search_expr,
 	    *buttons[i].check_button = w;
 	}
 
-	gtk_table_attach(GTK_TABLE(options_table), w,
+        if (w != NULL)
+            gtk_table_attach(GTK_TABLE(options_table), w,
 			i % 3, i % 3 + 1, i / 3, i / 3 + 1,
 			GTK_FILL, GTK_SHRINK, 0, 0);
     }
@@ -769,6 +779,8 @@ SagasuApp::build_user_interface(const std::string &init_search_expr,
 			G_CALLBACK(::entry_changed_cb), NULL);
     g_signal_connect(G_OBJECT(search_dir_entry), "changed",
 			G_CALLBACK(::entry_changed_cb), NULL);
+    g_signal_connect(G_OBJECT(excl_dirs_entry), "changed",
+			G_CALLBACK(::entry_changed_cb), NULL);
 
 
     show_working_state(false);
@@ -841,6 +853,9 @@ SagasuApp::search_cb(GtkWidget *, gpointer)
     if (match_whole_words())
 	target_expr = "\\b(" + target_expr + ")\\b";
 
+    string excl_dirs = latin1_string(gtk_entry_get_text(
+					GTK_ENTRY(excl_dirs_entry)));
+
     input_channel = NULL;
     create_search_process(
 			target_expr,
@@ -849,7 +864,7 @@ SagasuApp::search_cb(GtkWidget *, gpointer)
 			get_file_patterns(),
 			match_case(),
 			dir_recursion_depth(),
-			exclude_cvs_dirs(),
+			excl_dirs,
 			exclude_symlinked_dirs());
     if (input_fd == -1)
 	return;
@@ -911,14 +926,6 @@ SagasuApp::dir_recursion_depth() const
 
 
 bool
-SagasuApp::exclude_cvs_dirs() const
-{
-    return gtk_toggle_button_get_active(
-		    GTK_TOGGLE_BUTTON(exclude_cvs_dirs_button));
-}
-
-
-bool
 SagasuApp::exclude_symlinked_dirs() const
 {
     return gtk_toggle_button_get_active(
@@ -933,7 +940,7 @@ SagasuApp::create_search_process(const string &target_expr,
 				const string &file_patterns,
 				bool match_case,
 				gint recursion_depth,
-				bool exclude_cvs_dirs,
+				const std::string &excl_dirs,
 				bool exclude_symlinked_dirs)
 /*
     Creates a process that will search for the regular expression
@@ -1023,7 +1030,7 @@ SagasuApp::create_search_process(const string &target_expr,
 		search_dir.c_str(),
 		file_patterns.c_str(),
 		match_case ? "1" : "0",
-		exclude_cvs_dirs ? "1" : "0",
+		excl_dirs.c_str(),
 		exclude_symlinked_dirs ? "1" : "0",
 		depth,
 		NULL);
@@ -1284,7 +1291,11 @@ SagasuApp::launch_editor_for_position(gint pos_in_chars)
     }
     if (pid == 0)  // if in child
     {
-	system(cmd.c_str());
+	if (system(cmd.c_str()) == -1)
+	{
+	    perror("system");
+	    _exit(EXIT_FAILURE);
+	}
 
 	/*
 	    We must exit the child with _exit() instead of exit()
@@ -1377,8 +1388,8 @@ SagasuApp::load_configuration()
 		GTK_SPIN_BUTTON(dir_recursion_depth_spin_button),
 		(gint) depth);
 
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(exclude_cvs_dirs_button),
-		get_bool_config_var(EXCLUDE_CVS_DIRS_PATH, true));
+    entry_set_text(excl_dirs_entry,
+		get_config_var(EXCL_DIRS_PATH, default_excl_dirs));
     gtk_toggle_button_set_active(
 			    GTK_TOGGLE_BUTTON(exclude_symlinked_dirs_button),
 		get_bool_config_var(EXCLUDE_SYMLINKED_DIRS_PATH, true));
@@ -1413,8 +1424,8 @@ SagasuApp::save_configuration()
 		GET_ACTIVE(use_perl_regex_button));
     set_config_var(DIR_RECURSION_DEPTH_PATH,
 		depth);
-    set_config_var(EXCLUDE_CVS_DIRS_PATH,
-		GET_ACTIVE(exclude_cvs_dirs_button));
+    set_config_var(EXCL_DIRS_PATH,
+			gtk_entry_get_text(GTK_ENTRY(excl_dirs_entry)));
     set_config_var(EXCLUDE_SYMLINKED_DIRS_PATH,
 		GET_ACTIVE(exclude_symlinked_dirs_button));
 
@@ -1658,6 +1669,14 @@ SagasuApp::browse_search_dir_cb(GtkWidget *, gpointer)
 
 
 void
+SagasuApp::default_excl_dirs_cb(GtkWidget *, gpointer)
+{
+    gtk_entry_set_text(GTK_ENTRY(excl_dirs_entry),
+		latin1_string(default_excl_dirs).c_str());
+}
+
+
+void
 SagasuApp::close_search_dir_file_sel()
 {
     assert(search_dir_file_sel_dlg != NULL);
@@ -1864,12 +1883,4 @@ void
 SagasuApp::close_current_tab_cb(GtkWidget *, gpointer)
 {
     tab_close_clicked_cb(NULL, get_current_result_page());
-}
-
-
-void
-SagasuApp::say_sagasu_cb(GtkWidget *, gpointer)
-{
-    string fn = get_dir(PKGSOUNDDIR, "PKGSOUNDDIR") + PACKAGE + ".wav";
-    gnome_sound_play(fn.c_str());
 }

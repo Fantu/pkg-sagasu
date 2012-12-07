@@ -1,4 +1,4 @@
-/*  $Id: util.h,v 1.8 2010/05/19 01:12:10 sarrazip Exp $
+/*  $Id: util.h,v 1.9 2012/11/25 00:58:22 sarrazip Exp $
     util.h - Various utilities
 
     sagasu - GNOME tool to find strings in a set of files
@@ -16,8 +16,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-    02111-1307, USA.
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301, USA.
 */
 
 #ifndef _H_util

@@ -1,4 +1,4 @@
-# $Id: sagasu.spec.in,v 1.9 2006/08/31 22:29:15 sarrazip Exp $
+# $Id: sagasu.spec.in,v 1.14 2012/11/25 00:58:19 sarrazip Exp $
 
 # RPM .spec file
 
@@ -17,17 +17,20 @@
 %define srcext .gz
 %endif
 
-Summary: @PACKAGE_DESC_EN@
+Summary: @PACKAGE_SUMMARY_EN@
+Summary(fr): @PACKAGE_SUMMARY_FR@
 Name: @PACKAGE@
 Version: @VERSION@
 Release: %{rel}
 License: GPL
 Group: Applications/Text
-Source: %{name}-%{version}.tar%{srcext}
+Source0: %{name}-%{version}.tar%{srcext}
 URL: @PACKAGE_HOME_PAGE@
 Prefix: /usr
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: libgnomeui-devel >= @LIBGNOMEUI_MINVER@
+BuildRequires: gettext
+BuildRequires: desktop-file-utils
 Requires: libgnomeui >= @LIBGNOMEUI_MINVER@
 
 %description
@@ -55,20 +58,20 @@ La recherche peut optionnellement ignorer les répertoires CVS.
 make %{?_smp_mflags}
 
 %install
-rm -fR $RPM_BUILD_ROOT
-make DESTDIR=$RPM_BUILD_ROOT install
+rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+%find_lang %{name}
+desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.desktop
 
 %clean
 rm -fR $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(-, root, root)
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/pixmaps/*
 %{_datadir}/sagasu
-%{_datadir}/sounds/sagasu
-%{_datadir}/locale/*/LC_MESSAGES/*
 %{_datadir}/gnome/help/*/*/*
 %{_mandir}/man*/*
 %doc %{_defaultdocdir}/*

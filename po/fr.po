@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagasu 0.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 20:11-0400\n"
+"POT-Creation-Date: 2012-11-24 19:37-0500\n"
 "PO-Revision-Date: 2003-10-21 02:03-0400\n"
 "Last-Translator: Pierre Sarrazin <http://sarrazip.com/>\n"
 "Language-Team: Français <http://sarrazip.com/>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,119 +24,111 @@ msgstr "arguments en trop ignorés"
 msgid "No results yet."
 msgstr "Aucun résultat."
 
-#: src/SagasuApp.cpp:194
+#: src/SagasuApp.cpp:195
 msgid "Distributed under the GNU General Public License"
 msgstr "Distribué sous la Licence Publique Générale GNU (GPL)"
 
-#: src/SagasuApp.cpp:197 src/SagasuApp.cpp:547 src/SagasuApp.cpp:548
+#: src/SagasuApp.cpp:199 src/SagasuApp.cpp:547 src/SagasuApp.cpp:548
 msgid "Sagasu"
 msgstr "Sagasu"
 
-#: src/SagasuApp.cpp:201
+#: src/SagasuApp.cpp:203
 msgid "GNOME tool to find strings in a set of files"
 msgstr "Outil GNOME cherchant des chaines dans un ensemble de fichiers"
 
-#: src/SagasuApp.cpp:259
+#: src/SagasuApp.cpp:261
 msgid "_New tab"
 msgstr "_Nouvel onglet"
 
-#: src/SagasuApp.cpp:260 src/SagasuApp.cpp:321
+#: src/SagasuApp.cpp:262 src/SagasuApp.cpp:319
 msgid "Create a new tab in which to display search results"
 msgstr "Créér un nouvel onglet dans lequel afficher des résultats"
 
-#: src/SagasuApp.cpp:264
+#: src/SagasuApp.cpp:266
 msgid "Go to _first tab"
 msgstr "Aller au _premier onglet"
 
-#: src/SagasuApp.cpp:265 src/SagasuApp.cpp:326
+#: src/SagasuApp.cpp:267 src/SagasuApp.cpp:324
 msgid "Go to the leftmost tab"
 msgstr "Aller à l'onglet le plus à gauche"
 
-#: src/SagasuApp.cpp:268
+#: src/SagasuApp.cpp:270
 msgid "P_revious tab"
 msgstr "Onglet p_récédent"
 
-#: src/SagasuApp.cpp:269 src/SagasuApp.cpp:331
+#: src/SagasuApp.cpp:271 src/SagasuApp.cpp:329
 msgid "Go to the tab at the left of the current one"
 msgstr "Aller à l'onglet à gauche de l'onglet courant"
 
-#: src/SagasuApp.cpp:274
+#: src/SagasuApp.cpp:276
 msgid "Nex_t tab"
 msgstr "Onglet suivan_t"
 
-#: src/SagasuApp.cpp:275 src/SagasuApp.cpp:336
+#: src/SagasuApp.cpp:277 src/SagasuApp.cpp:334
 msgid "Go to the tab at the right of the current one"
 msgstr "Aller à l'onglet à droite de l'onglet courant"
 
-#: src/SagasuApp.cpp:280
+#: src/SagasuApp.cpp:282
 msgid "Go to _last tab"
 msgstr "Aller au _dernier onglet"
 
-#: src/SagasuApp.cpp:281 src/SagasuApp.cpp:341
+#: src/SagasuApp.cpp:283 src/SagasuApp.cpp:339
 msgid "Go to the rightmost tab"
 msgstr "Aller à l'onglet le plus à droite"
 
-#: src/SagasuApp.cpp:284
+#: src/SagasuApp.cpp:286
 msgid "_Close tab"
 msgstr "_Fermer l'onglet courant"
 
-#: src/SagasuApp.cpp:285
+#: src/SagasuApp.cpp:287
 msgid "Close the current result page"
 msgstr "Fermer la page de résultats courante"
 
-#: src/SagasuApp.cpp:296
-msgid "_Say the word \"sagasu\""
-msgstr "_Dire le mot «sagasu»"
-
-#: src/SagasuApp.cpp:297
-msgid "Play a sound file that pronounces the word \"sagasu\""
-msgstr "Joue un fichier de son qui prononce le mot «sagasu»"
-
-#: src/SagasuApp.cpp:300
+#: src/SagasuApp.cpp:298
 msgid "Go to Sagasu _Home Page"
 msgstr "Visiter la page _Web de Sagasu"
 
-#: src/SagasuApp.cpp:301
+#: src/SagasuApp.cpp:299
 msgid "Open the Sagasu Home Page in a browser"
 msgstr "Ouvre la page Web de Sagasu dans un fureteur"
 
-#: src/SagasuApp.cpp:310
+#: src/SagasuApp.cpp:308
 msgid "_Tabs"
 msgstr "_Onglets"
 
-#: src/SagasuApp.cpp:320
+#: src/SagasuApp.cpp:318
 msgid "New tab"
 msgstr "Nouvel onglet"
 
-#: src/SagasuApp.cpp:325
+#: src/SagasuApp.cpp:323
 msgid "First tab"
 msgstr "Premier onglet"
 
-#: src/SagasuApp.cpp:330
+#: src/SagasuApp.cpp:328
 msgid "Previous tab"
 msgstr "Onglet précédent"
 
-#: src/SagasuApp.cpp:335
+#: src/SagasuApp.cpp:333
 msgid "Next tab"
 msgstr "Onglet suivant"
 
-#: src/SagasuApp.cpp:340
+#: src/SagasuApp.cpp:338
 msgid "Last tab"
 msgstr "Dernier onglet"
 
-#: src/SagasuApp.cpp:345
+#: src/SagasuApp.cpp:343
 msgid "New search"
 msgstr "Nouv. rech."
 
-#: src/SagasuApp.cpp:346
+#: src/SagasuApp.cpp:344
 msgid "Empty the search string field"
 msgstr "Vide le champ du texte cible"
 
-#: src/SagasuApp.cpp:351
+#: src/SagasuApp.cpp:349
 msgid "Quit"
 msgstr "Quitter"
 
-#: src/SagasuApp.cpp:352
+#: src/SagasuApp.cpp:350
 msgid "Quit the program"
 msgstr "Quitte l'application"
 
@@ -151,137 +144,143 @@ msgstr "Ch_ercher"
 msgid "Searching..."
 msgstr "Recherche..."
 
-#: src/SagasuApp.cpp:586
+#: src/SagasuApp.cpp:587
 msgid "Search strin_g:"
 msgstr "Texte c_ible:"
 
-#: src/SagasuApp.cpp:589
+#: src/SagasuApp.cpp:590
 msgid "File _patterns:"
 msgstr "Fichiers ci_bles:"
 
-#: src/SagasuApp.cpp:590
+#: src/SagasuApp.cpp:591 src/SagasuApp.cpp:595
 msgid "_Defaults"
 msgstr "_Défauts"
 
-#: src/SagasuApp.cpp:591
+#: src/SagasuApp.cpp:592
 msgid "Se_arch directory:"
 msgstr "Répertoire de re_cherche:"
 
-#: src/SagasuApp.cpp:592
+#: src/SagasuApp.cpp:593
 msgid "_Browse..."
 msgstr "_Parcourir..."
 
-#: src/SagasuApp.cpp:593
+#: src/SagasuApp.cpp:594
+msgid "Excluded d_irectories:"
+msgstr "Réper_toires exclus:"
+
+#: src/SagasuApp.cpp:596
 msgid "Edit_or command:"
 msgstr "Co_mmande d'édition:"
 
-#: src/SagasuApp.cpp:594
+#: src/SagasuApp.cpp:597
 msgid "D_efault"
 msgstr "Défa_ut"
 
-#: src/SagasuApp.cpp:642
+#: src/SagasuApp.cpp:645
 msgid "Match _whole words"
 msgstr "Mots e_ntiers"
 
-#: src/SagasuApp.cpp:643
+#: src/SagasuApp.cpp:646
 msgid "Match _case"
 msgstr "Respecter ca_sse"
 
-#: src/SagasuApp.cpp:644
+#: src/SagasuApp.cpp:647
 msgid "Use Perl rege_x"
 msgstr "E_xpr. rég. Perl"
 
-#: src/SagasuApp.cpp:646
-msgid "Exclude C_VS dirs"
-msgstr "Exclure rép. C_VS"
-
-#: src/SagasuApp.cpp:647
+#: src/SagasuApp.cpp:650
 msgid "Exclude sym_linked dirs"
 msgstr "Exclure _liens symb. sur rép."
 
-#: src/SagasuApp.cpp:668
+#: src/SagasuApp.cpp:671
 msgid "Dir _recursion depth:"
 msgstr "Profondeur _récursion rép.:"
 
-#: src/SagasuApp.cpp:709
+#: src/SagasuApp.cpp:719
 msgid "Find in res_ults:"
 msgstr "C_hercher dans résultats:"
 
-#: src/SagasuApp.cpp:710
+#: src/SagasuApp.cpp:720
 msgid "F_ind"
 msgstr "_Trouver"
 
-#: src/SagasuApp.cpp:743 src/SagasuApp.cpp:744
+#: src/SagasuApp.cpp:753 src/SagasuApp.cpp:754
 msgid "Ready."
 msgstr "Prêt."
 
-#: src/SagasuApp.cpp:827
+#: src/SagasuApp.cpp:839
 msgid "Interrupted"
 msgstr "Interrompu"
 
-#: src/SagasuApp.cpp:964
+#: src/SagasuApp.cpp:971
 msgid "Search directory is not accessible"
 msgstr "Répertoire de recherche:"
 
-#: src/SagasuApp.cpp:977
+#: src/SagasuApp.cpp:984
 msgid "Error when creating a pipe"
 msgstr "Erreur en créant le processus de recherche"
 
-#: src/SagasuApp.cpp:991
+#: src/SagasuApp.cpp:998
 msgid "Error when creating the search process"
 msgstr "Erreur en créant le processus de recherche"
 
-#: src/SagasuApp.cpp:1045
+#: src/SagasuApp.cpp:1052
 msgid "Search string:"
 msgstr "Texte cible:"
 
-#: src/SagasuApp.cpp:1104
+#: src/SagasuApp.cpp:1111
 msgid "Matching lines"
 msgstr "Lignes trouvées"
 
-#: src/SagasuApp.cpp:1105
+#: src/SagasuApp.cpp:1112
 msgid "matching files"
 msgstr "fichiers trouvés"
 
-#: src/SagasuApp.cpp:1106
+#: src/SagasuApp.cpp:1113
 msgid "(still searching)"
 msgstr "(recherche en cours)"
 
-#: src/SagasuApp.cpp:1282
+#: src/SagasuApp.cpp:1289
 msgid "Error when creating the editor process"
 msgstr "Erreur en créant le processus d'édition"
 
-#: src/SagasuApp.cpp:1537
+#: src/SagasuApp.cpp:1548
 msgid "Not found"
 msgstr "Pas trouvé"
 
-#: src/SagasuApp.cpp:1550
+#: src/SagasuApp.cpp:1561
 msgid "Found at:"
 msgstr "Trouvé à:"
 
-#: src/SagasuApp.cpp:1613
+#: src/SagasuApp.cpp:1624
 msgid "Select search directory"
 msgstr "Choisissez un répertoire de recherche"
 
-#: src/SagasuApp.cpp:1685
+#: src/SagasuApp.cpp:1704
 msgid "Directory not found."
 msgstr "Répertoire inexistant."
 
-#: src/SagasuApp.cpp:1692
+#: src/SagasuApp.cpp:1711
 msgid "Not a directory."
 msgstr "Pas un répertoire."
 
-#: src/SagasuApp.cpp:1738
+#: src/SagasuApp.cpp:1757
 msgid "Error when opening Sagasu Home Page"
 msgstr "Erreur en ouvrant la page Web de Sagasu"
 
-#: src/SagasuApp.cpp:1858
+#: src/SagasuApp.cpp:1877
 msgid "Tab numbers restarted at 1"
 msgstr "Onglets renumérotés à partir de 1"
 
 #: src/util.cpp:153
 msgid "URL:"
 msgstr "URL:"
+
+#~ msgid "_Say the word \"sagasu\""
+#~ msgstr "_Dire le mot «sagasu»"
+
+#~ msgid "Play a sound file that pronounces the word \"sagasu\""
+#~ msgstr "Joue un fichier de son qui prononce le mot «sagasu»"
 
 #~ msgid "View this Program's _License (GPL)"
 #~ msgstr "Voir la _licence du programme (GPL)"
