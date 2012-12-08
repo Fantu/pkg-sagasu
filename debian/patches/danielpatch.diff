@@ -1,3 +1,5 @@
+Description: Patch from old debian package
+Author: Daniel Gubser <guterm@debian.org>
 --- a/src/util.cpp
 +++ b/src/util.cpp
 @@ -33,6 +33,8 @@

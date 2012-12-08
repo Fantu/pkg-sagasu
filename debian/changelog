@@ -1,5 +1,6 @@
 sagasu (2.0.12-1) UNRELEASED; urgency=low
 
+  * Non-maintainer upload
   * New upstream release (Closes: #690806, #695023)
   * Bumped up Standards-Version to 3.9.4 and improve package.
   * Only include <glib.h> instead of individual header files (Closes: #665609)

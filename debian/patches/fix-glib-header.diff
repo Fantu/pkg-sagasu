@@ -1,3 +1,6 @@
+Description: Only include <glib.h> instead of individual header files
+Bug-Debian: http://bugs.debian.org/665609
+Author: Fabio Fantoni <fabio.fantoni@heliman.it>
 --- a/src/util.h	2010-05-19 01:12:10.000000000 +0000
 +++ b/src/util.h	2012-10-01 16:37:09.000000000 +0000
 @@ -23,8 +23,7 @@

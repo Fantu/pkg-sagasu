@@ -2,7 +2,6 @@ usr/bin
 usr/share/applications
 usr/share/pixmaps
 usr/share/sagasu
-usr/share/sounds/sagasu
-usr/share/locale/{cs,da,de,fr,ja,ru,sr}/LC_MESSAGES
+usr/share/locale/*/LC_MESSAGES
 usr/share/gnome/help
 usr/share/man/man1
