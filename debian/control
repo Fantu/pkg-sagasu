@@ -10,7 +10,8 @@ Homepage: http://perso.b2b2c.ca/sarrazip/dev/sagasu.html
 Package: sagasu
 Architecture: any
 Depends: ${misc:Depends},
-         ${shlibs:Depends}
+         ${shlibs:Depends},
+         perl
 Description: GNOME tool to find strings in a set of files
  The user specifies the search directory and the set of files
  to be searched.  Double-clicking on a search result launches a
