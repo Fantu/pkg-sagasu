@@ -1,4 +1,4 @@
-sagasu (2.0.12-1) UNRELEASED; urgency=low
+sagasu (2.0.12-1.0) unstable; urgency=low
 
   * Non-maintainer upload
   * New upstream release (Closes: #690806, #695023)
