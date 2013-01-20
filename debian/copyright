@@ -3,7 +3,7 @@ Upstream-Name: sagasu
 Source: http://perso.b2b2c.ca/sarrazip/dev/sagasu-%{version}.tar.gz
 
 Files: *
-Copyright: 2002, 20012 Pierre Sarrazin <sarrazip@sarrazip.com>
+Copyright: 2002-2012 Pierre Sarrazin <sarrazip@sarrazip.com>
 License: GPL-2+
 
 Files: debian/*

@@ -1,4 +1,4 @@
-sagasu (2.0.12-1.0) unstable; urgency=low
+sagasu (2.0.12-0.1) unstable; urgency=low
 
   * Non-maintainer upload
   * New upstream release (Closes: #690806, #695023)
@@ -6,7 +6,7 @@ sagasu (2.0.12-1.0) unstable; urgency=low
   * Only include <glib.h> instead of individual header files. (Closes: #665609)
   * Added perl dependency.
 
- -- Fabio Fantoni <fabio.fantoni@heliman.it>  Thu, 06 Dec 2012 16:18:51 +0100
+ -- Fabio Fantoni <fabio.fantoni@heliman.it>  Sat, 19 Jan 2013 19:34:08 +0100
 
 sagasu (2.0.10-1) unstable; urgency=low
 
